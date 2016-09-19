@@ -1,7 +1,8 @@
 # Summary
 
-* [Bases](./bases/bases.md)
+* [Bases](/bases/bases.md)
     * [typeof](./bases/typeof.md)
+    * [expression](./bases/expression.md)
 * [Reading](reading.md)
 * [AngularJS](angularjs.md)
 * [jQuery](jquery.md)
