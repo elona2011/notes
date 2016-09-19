@@ -1,10 +1,11 @@
 # Summary
 
 * [Bases](/bases/bases.md)
-    * [typeof](./bases/typeof.md)
-    * [compare](./bases/compare.md)
-    * [assign](./bases/assign.md)
-    * [cache](./bases/cache.md)
+    * [typeof](/bases/typeof.md)
+    * [compare](/bases/compare.md)
+    * [assign](/bases/assign.md)
+    * [function](/bases/function.md)
+    * [cache](/bases/cache.md)
 * [Reading](reading.md)
 * [AngularJS](angularjs.md)
 * [jQuery](jquery.md)

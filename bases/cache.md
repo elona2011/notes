@@ -10,13 +10,13 @@ function getElements(name){
 # DOM的缓存(地址缓存，数据都是实时最新的)
 
 ```
-function a(){
+var b = (function a(){
     var cache = {};
     return function(dom){
         return cache[dom] ? cache[dom] : cache[dom] = document.getElementById(dom);
     }
-}
-var b= a();
+})();
+
 console.log(b("test").innerHTML);
 document.getElementById('test').innerHTML="you";
 console.log(b("test").innerHTML);
