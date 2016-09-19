@@ -42,7 +42,3 @@ xhr.responseText
 ```
 
 https的页面请求http的ajax请求会报错
-
-# template
-
-http://div.io/topic/758
