@@ -1,7 +1,7 @@
 # Summary
 
 * [Reading](reading.md)
-* [angularjs](angularjs.md)
+* [AngularJS](angularjs.md)
 * [javascript](javascript.md)
 * [jQuery](jquery.md)
 * [plugin](plugin.md)

@@ -3,9 +3,11 @@
 ng-if会创建一个子scope
 
 在link方法中更新view，可能需要$render
+
+```
 ctrl.$setViewValue('');
 ctrl.$render();
-
+```
 
 ## priority
 
@@ -16,8 +18,10 @@ directive中的link是post-link
 ## transclude
 
 1.2和１。３版本的区别：将transclude scope作为directive scope的子scope，即$parent的引用将不同
+
 http://stackoverflow.com/questions/16653004/confused-about-angularjs-transcluded-and-isolate-scopes-bindings
- the transcluded html is a new child scope of the current scope on that DOM.
+
+the transcluded html is a new child scope of the current scope on that DOM.
 
 http://teropa.info/blog/2015/06/09/transclusion.html
 
@@ -52,9 +56,12 @@ MetronicApp.directive('roomTypes', ['ajax1', '$compile', function(ajax1, $compil
 
 # Services
 
-Service vs provider vs factory
+## Service vs provider vs factory
+
 http://hellobug.github.io/blog/angularjs-providers/
+
 http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory
+
 https://gist.github.com/Mithrandir0x/3639232
 
 # Unit-test
@@ -62,14 +69,20 @@ https://gist.github.com/Mithrandir0x/3639232
 http://www.bradoncode.com/tutorials/angularjs-unit-testing/
 
 why
+
 Testing is an investment. If your code will be around for a while, or have other people using it, it's an investment well worth making. If your code will only ever be used by you, and isn't relied upon by a business, well, do whatever you like.
 
 ## karma
 
-install
+### install
+
+```
 cnpm install karma --save-dev
 cnpm install -g karma-cli
-必须安上述命令安装，否则会出问题
+```
+
+必须按上述命令安装，否则会出问题
 
 karma.conf.js
+
 files需包含所有依赖的库文件
