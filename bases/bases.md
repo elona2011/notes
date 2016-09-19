@@ -1,22 +1,3 @@
-# object
-
-hasOwnProperty
-
-实现a['b.c']
-
-```
-var r = { a:1, b: {b1:11, b2: 99}};
-var s = "b.b2";
-
-var value = s.split('.').reduce(function(a, b) {
-  return a[b];
-}, r);
-
-console.log(value);
-```
-
-http://stackoverflow.com/questions/8051975/access-object-child-properties-using-a-dot-notation-string
-
 # Promise
 
 promise chaining
@@ -44,3 +25,24 @@ window.open('#/edit-rooms-detail/' + rowData[1], '_blank');
 <a href="javascript:history.go(-1);" class="btn default">返回上一级</a>
 <a target="_blank" href="http://your_url_here.html">Link</a>
 ```
+
+# Ajax
+
+XMLHttpRequest
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open('get', 'http://yanjie.me/');
+xhr.onload = function() { /* do something */ }
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('Content-Length', JSON.stringify(data).length);
+xhr.send(JSON.stringify(data));
+xhr.status
+xhr.responseText
+```
+
+https的页面请求http的ajax请求会报错
+
+# template
+
+http://div.io/topic/758
