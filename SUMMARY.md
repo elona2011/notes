@@ -1,8 +1,9 @@
 # Summary
 
+* [Bases](./bases/bases.md)
+    * [typeof](./bases/typeof.md)
 * [Reading](reading.md)
 * [AngularJS](angularjs.md)
-* [javascript](javascript.md)
 * [jQuery](jquery.md)
 * [plugin](plugin.md)
 * [node](node.md)
