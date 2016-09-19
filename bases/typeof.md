@@ -14,9 +14,23 @@ String.prototype.bb = '33';
 a.bb; //'33'
 ```
 
-基本类型中的假值
+# 对象判断
 
-``false, 0, '', NaN, null, undefined``, 除了这6个值，其它所有值均可隐式转换为true
+```
+function A(){}
+var a = new A();
+if(typeof a === 'object'){} //基本类型判断
+if(a instanceof A){} //实例判断
+if(a.constructor === A){} //构造器函数判断
+```
+
+# 函数判断
+
+```
+function isFunction(fn){
+  return Object.prototype.toString.call(fn) === "[object Function]";
+}
+```
 
 # 两种类型判断的区别
 

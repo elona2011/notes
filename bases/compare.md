@@ -1,8 +1,12 @@
-字符串比较中是按第一个不相同的字符的ascall码值来比较的
+# 字符串比较
+
+按第一个不相同的字符的ascall码值来比较的
 
 ```
 '2' > '10' //true
 ```
+
+# null比较
 
 ```
 null >= 0; // true
@@ -11,7 +15,11 @@ null == 0; // false
 
 http://stackoverflow.com/questions/2910495/why-null-0-null-0-but-not-null-0
 
-# 为什么++[[]][+[]]+[+[]] === ‘10’是true?
+# 基本类型中的假值
+
+``false, 0, '', NaN, null, undefined``, 除了这6个值，其它所有值均可隐式转换为true
+
+# ++[[]][+[]]+[+[]] === '10'
 
 首先+[] === 0
 

@@ -2,7 +2,9 @@
 
 * [Bases](/bases/bases.md)
     * [typeof](./bases/typeof.md)
-    * [expression](./bases/expression.md)
+    * [compare](./bases/compare.md)
+    * [assign](./bases/assign.md)
+    * [cache](./bases/cache.md)
 * [Reading](reading.md)
 * [AngularJS](angularjs.md)
 * [jQuery](jquery.md)
