@@ -17,7 +17,7 @@ directive中的link是post-link
 
 ## transclude
 
-1.2和１。３版本的区别：将transclude scope作为directive scope的子scope，即$parent的引用将不同
+1.2和1.3版本的区别：将transclude scope作为directive scope的子scope，即$parent的引用将不同
 
 http://stackoverflow.com/questions/16653004/confused-about-angularjs-transcluded-and-isolate-scopes-bindings
 
