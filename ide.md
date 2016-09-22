@@ -44,3 +44,25 @@ http://docs.sublimetext.info/en/latest/extensibility/snippets.html
     ]
 }
 ```
+
+# Atom package
+
+atom-beautify
+
+atom-hexo
+
+git-plus
+
+highlight-selected
+
+language-babel
+
+minimap
+
+minimap-highlight-selected
+
+platformio-ide-terminal
+
+project-manager
+
+tortoise-svn
