@@ -52,7 +52,7 @@ git commit -m 'xxx comment'
 git push
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 更新ssh key，导致无法push
 
