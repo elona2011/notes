@@ -1,7 +1,7 @@
 # Summary
 
 * [Bases](/bases/bases.md)
-    * [typeof](/bases/typeof.md)
+    * [Type Testing](/bases/typeof.md)
     * [compare](/bases/compare.md)
     * [assign](/bases/assign.md)
     * [object](/bases/object.md)

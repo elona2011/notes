@@ -25,20 +25,3 @@ window.open('#/edit-rooms-detail/' + rowData[1], '_blank');
 <a href="javascript:history.go(-1);" class="btn default">返回上一级</a>
 <a target="_blank" href="http://your_url_here.html">Link</a>
 ```
-
-# Ajax
-
-XMLHttpRequest
-
-```
-var xhr = new XMLHttpRequest();
-xhr.open('get', 'http://yanjie.me/');
-xhr.onload = function() { /* do something */ }
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.setRequestHeader('Content-Length', JSON.stringify(data).length);
-xhr.send(JSON.stringify(data));
-xhr.status
-xhr.responseText
-```
-
-https的页面请求http的ajax请求会报错
