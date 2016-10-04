@@ -8,6 +8,7 @@
     * [function](/bases/function.md)
     * [cache](/bases/cache.md)
     * [template](/bases/template.md)
+    * [event](/bases/event.md)
     * [ajax](/bases/ajax.md)
 * [Cross Domain](cors.md)
 * [Reading](reading.md)
