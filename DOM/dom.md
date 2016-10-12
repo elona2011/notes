@@ -10,3 +10,7 @@ Node.ELEMENT_NODE | 1
 Node.TEXT_NODE | 3
 Node.COMMENT_NODE | 8
 Node.DOCUMENT_NODE | 9
+
+https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+
+# 
