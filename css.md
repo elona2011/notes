@@ -2,9 +2,10 @@
 
 table里td文字居中：
 ```
+//放在td上
 .table-text-center {
-    vertical-align: middle; //垂直
-    text-align: center; //水平
+    vertical-align: middle!important; //垂直
+    text-align: center!important; //水平
 }
 
 /* Internet Explorer 10 */
