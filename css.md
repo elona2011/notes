@@ -29,6 +29,28 @@ box-pack:center;
 box-align:center;
 ```
 
+bootstrap grid上下居中
+
+```
+<div class="row">
+    <div class="col-md-10">
+        <div id="main5" style="height:400px"></div>
+    </div>
+    <div class="col-md-2" style="height: 400px;">
+        <div style="position: absolute;width: 100%;left: 0;top: 50%;transform: translateY(-50%);">
+            <table class="table table-bordered">
+                <tr>
+                    <td><a href="" style="pointer-events: none;cursor: default;">Jill</a></td>
+                </tr>
+                <tr>
+                    <td><a href="" style="pointer-events: none;cursor: default;">Jill</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+```
+
 # input-group
 
 ```

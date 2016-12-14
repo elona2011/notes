@@ -71,6 +71,16 @@ Object.keys(myObject); //返回一个数组，包含所有可枚举属性，不�
 Object.getOwnPropertyName(myObject); //返回一个数组，包含所有属性，不查[[Prototype]]链
 ```
 
+判断是否为空对象
+```
+function isEmptyObject(o) {
+    for (var n in o) {
+        return false;
+    }
+    return true;
+}
+```
+
 ## hasOwnProperty
 
 所有的普通对象都可以通过对于Object.prototype的委托来访问hasOwnProperty()，但有的对象可能没连接到Object.prototype（通过Object.create(null)来创建），这时访问myObject.hasOwnProperty()会失败。但可以使用``Object.prototype.hasOwnProperty.call(myObject, 'a')``
