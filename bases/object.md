@@ -85,6 +85,14 @@ function isEmptyObject(o) {
 
 所有的普通对象都可以通过对于Object.prototype的委托来访问hasOwnProperty()，但有的对象可能没连接到Object.prototype（通过Object.create(null)来创建），这时访问myObject.hasOwnProperty()会失败。但可以使用``Object.prototype.hasOwnProperty.call(myObject, 'a')``
 
+# 复制
+
+如果对象符合json规范http://json.org/，即不包含function,undefined等类型，那么可以使用下面的方法
+
+```
+JSON.parse(JSON.stringify(obj))
+```
+
 # 实现a['b.c']
 
 ```js
