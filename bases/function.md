@@ -75,3 +75,14 @@ b(); //抛出一个referenceError,b函数只能在函数表达式内部访问
 ~function b(){}();
 +function b(){}();
 ```
+
+# arrow function
+
+箭头函数不要使用于prototype的函数定义
+
+```
+let that = this;
+Vue.prototype.parseDom = () =>{
+  this.data //此处的this===that，不能指向调用时的对象
+}
+```

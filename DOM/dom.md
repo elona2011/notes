@@ -31,3 +31,22 @@ function walkTree(node, callback) {
     }
 }
 ```
+
+# NodeList
+
+firefox47版本中,NodeListPrototype不包含数组方法，可按如下方法添加
+
+```js
+var arrayMethods = Object.getOwnPropertyNames( Array.prototype );
+
+arrayMethods.forEach( attachArrayMethodsToNodeList );
+
+function attachArrayMethodsToNodeList(methodName)
+{
+  if(methodName !== "length") {
+    NodeList.prototype[methodName] = Array.prototype[methodName];
+  }
+};
+```
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList
