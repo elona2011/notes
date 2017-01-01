@@ -30,6 +30,20 @@ c.d();
 -window  //第2个this
 ```
 
+但是，如果在严格模式下，不仅是anonymous函数，也包括有名函数中的this，如果立即执行，this将会是undefined
+
+```
+"use strict";
+function myConstructor() {
+    this.a = 'foo';
+    this.b = 'bar';
+}
+myInstance     = new myConstructor(); // all cool, all fine. a and b were created in a new local object
+myBadInstance  = myConstructor();
+```
+
+http://stackoverflow.com/questions/9822561/why-is-this-in-an-anonymous-function-undefined-when-using-strict
+
 隐式绑定
 
 ```
