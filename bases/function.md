@@ -30,7 +30,7 @@ c.d();
 -window  //第2个this
 ```
 
-但是，如果在严格模式下，不仅是anonymous函数，也包括有名函数中的this，如果立即执行，this将会是undefined
+但是，如果在严格模式下，不仅是anonymous函数，也包括命名函数中的this，如果立即执行，this将会是undefined
 
 ```
 "use strict";
