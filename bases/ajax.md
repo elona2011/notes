@@ -11,6 +11,7 @@ xhr.status
 xhr.responseText
 ```
 
+
 https的页面请求http的ajax请求会报错
 
 # 代码
