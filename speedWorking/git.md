@@ -1,3 +1,9 @@
+# why
+
+为什么要用git？因为git不仅可以版本控制，还可以显示出团队成员的贡献值，由关键成员负责master，对版本和团队都有很大用处。
+
+git可以说是为团队而生，而svn只是为项目而生
+
 # 添加SSH keys
 
 https://help.github.com/articles/generating-ssh-keys/
