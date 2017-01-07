@@ -68,7 +68,7 @@ http://stackoverflow.com/questions/23749886/git-unable-to-resolve-references-whe
 
 最近ssh可能被封，导致git客户端无论如何也连不上。尝试许久后，在win10找到如下方法：[Using SSH over the HTTPS port](https://help.github.com/articles/using-ssh-over-the-https-port/)
 
-该方法实测可用，但实际使用中传输速度非常慢1k/s，可采用如下通过shadowsocks的方法：
+该方法实测可用，但实际使用中传输速度非常慢1k/s，可采用ssh走shadowsocks的方法，配置好后可达到代理的最大网速。
 
 1 设置好[git ssh key](https://help.github.com/articles/generating-ssh-keys/)
 
