@@ -64,7 +64,45 @@ git push
 
 http://stackoverflow.com/questions/23749886/git-unable-to-resolve-references-when-pushing
 
+# git proxy
+
+最近ssh可能被封，导致git客户端无论如何也连不上。尝试许久后，在win10找到如下方法：[Using SSH over the HTTPS port](https://help.github.com/articles/using-ssh-over-the-https-port/)
+
+该方法实测可用，但实际使用中传输速度非常慢1k/s，可采用如下通过shadowsocks的方法：
+
+1 设置好[git ssh key](https://help.github.com/articles/generating-ssh-keys/)
+
+2 在用户目录下的.ssh/创建文件config，并加入下面配置：
+
+```
+ProxyCommand C:/Program\ Files/Git/mingw64/bin/connect.exe -H http://127.0.0.1:9699 %h %p
+
+Host github.com
+  User git
+  Port 22
+  Hostname github.com
+  IdentityFile "C:\Users\username\\.ssh\id_rsa"
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+Host ssh.github.com
+  User git
+  Port 443
+  Hostname ssh.github.com
+  IdentityFile "C:\Users\username\\.ssh\id_rsa"
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+```
+
+``C:/Program\ Files/Git/mingw64/bin/connect.exe``替换成connect.exe的实际路径
+
+``http://127.0.0.1:9699``替换成代理地址和商品
+
+``C:\Users\username\\.ssh\id_rsa``替换成ssh key的实际路径
+
 # SVN
+
+TortoiseSVN命令行使用
 
 http://my.oschina.net/donhui/blog/385452
 
