@@ -81,7 +81,7 @@ Host github.com
   User git
   Port 22
   Hostname github.com
-  IdentityFile "C:\Users\username\\.ssh\id_rsa"
+  IdentityFile "C:\\Users\\username\\\.ssh\\id_rsa"
   TCPKeepAlive yes
   IdentitiesOnly yes
 
@@ -89,7 +89,7 @@ Host ssh.github.com
   User git
   Port 443
   Hostname ssh.github.com
-  IdentityFile "C:\Users\username\\.ssh\id_rsa"
+  IdentityFile "C:\\Users\\username\\\.ssh\\id_rsa"
   TCPKeepAlive yes
   IdentitiesOnly yes
 ```
@@ -98,7 +98,7 @@ Host ssh.github.com
 
 ``http://127.0.0.1:9699``替换成代理地址和商品
 
-``C:\Users\username\\.ssh\id_rsa``替换成ssh key的实际路径
+``C:\\Users\\username\\\.ssh\\id_rsa``替换成ssh key的实际路径
 
 # SVN
 
