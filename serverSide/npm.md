@@ -27,6 +27,12 @@ https-proxy=http://10.19.110.55:8080/
 registry=https://registry.npm.taobao.org
 ```
 
+## shrinkwrap
+
+锁定依赖包的版本号，可防止小版本号(^引起)升级导致的bug
+
+http://www.tuicool.com/articles/EBVNV37
+
 # server
 
 启动node server

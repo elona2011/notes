@@ -50,3 +50,16 @@ function attachArrayMethodsToNodeList(methodName)
 ```
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList
+
+## When is NodeList live and when is it static?
+
+http://stackoverflow.com/questions/28163033/when-is-nodelist-live-and-when-is-it-static
+
+# Manipulation
+
+HTML String
+
+```
+node.innerHTML = htmlString;
+node.insertAdjacentHTML('beforeend', '<div></div>')
+```
