@@ -107,3 +107,9 @@ console.log(value);
 ```
 
 http://stackoverflow.com/questions/8051975/access-object-child-properties-using-a-dot-notation-string
+
+# Proxy
+
+可定制对象的通用处理方法
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
