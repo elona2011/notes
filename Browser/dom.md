@@ -1,7 +1,3 @@
-# why
-
-DOM中的原生方法拥有最好的性能，如果要造轮子，必须要会DOM的方法
-
 # nodeType
 
 Constant | Value
@@ -53,6 +49,10 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList
 
 ## When is NodeList live and when is it static?
 
+List是static，而不是node是static，node依然是live
+
+Only ``querySelectorAll`` is not live
+
 http://stackoverflow.com/questions/28163033/when-is-nodelist-live-and-when-is-it-static
 
 # Manipulation
@@ -63,3 +63,23 @@ HTML String
 node.innerHTML = htmlString;
 node.insertAdjacentHTML('beforeend', '<div></div>')
 ```
+
+# Selector Matches
+
+```js
+element.matches(selector)
+```
+
+https://davidwalsh.name/element-matches-selector
+
+# Mutation
+
+```js
+var observer = new MutationObserver(function(mutations) {
+  [].forEach.call(mutations,function(mutation) {
+    console.log(mutation.type);
+  });    
+});
+```
+
+https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
