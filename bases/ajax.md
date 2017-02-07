@@ -1,6 +1,6 @@
 # XMLHttpRequest
 
-```
+```js
 var xhr = new XMLHttpRequest();
 xhr.open('get', 'http://yanjie.me/');
 xhr.onload = function() { /* do something */ }
@@ -16,7 +16,7 @@ https的页面请求http的ajax请求会报错
 
 # 代码
 
-```
+```js
 function ajax(options) {
     options = options || {};
     options.type = (options.type || "GET").toUpperCase();
@@ -38,4 +38,21 @@ function ajax(options) {
     xhr.open("GET", options.url, true);
     xhr.send(null);
 }
+```
+
+# upload
+
+```js
+var value = e.target.files[0]
+
+var fd = new FormData();
+
+fd.append('file', value);
+
+var xhr = new XMLHttpRequest()
+xhr.open('POST', '/home/index/upload')
+xhr.onload = function (e) {
+    e
+}
+xhr.send(fd)
 ```
