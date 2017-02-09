@@ -44,15 +44,26 @@ function ajax(options) {
 
 ```js
 var value = e.target.files[0]
-
 var fd = new FormData();
-
 fd.append('file', value);
 
+//XMLHttpRequest
 var xhr = new XMLHttpRequest()
 xhr.open('POST', '/home/index/upload')
 xhr.onload = function (e) {
     e
 }
 xhr.send(fd)
+
+//jquery
+$.ajax({
+    url: '/customservice/upload',
+    type: 'POST',
+    data: fd,
+    contentType: false,
+    processData: false,
+    success: function (e) {
+        e
+    }
+});
 ```
