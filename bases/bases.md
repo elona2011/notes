@@ -1,3 +1,11 @@
+# undefined
+
+可以使用``void 0``来代替``undefined``，原因：
+
+1 函数内部可以声明一个undefined变量取代undefined关键字
+
+2 少打几个字
+
 # Promise
 
 promise chaining
