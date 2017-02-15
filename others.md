@@ -1,11 +1,3 @@
-# Mysql
-
-## insert
-
-```
-insert into tasks set subject = '111',description = '111'
-```
-
 # Chrome
 
 ## bug
