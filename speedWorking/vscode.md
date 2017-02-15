@@ -49,3 +49,9 @@ https://code.visualstudio.com/docs/customization/keybindings
     }
 }
 ```
+
+# decorator
+
+How to remove experimentalDecorators warning in VSCode
+
+https://ihatetomatoes.net/how-to-remove-experimentaldecorators-warning-in-vscode/
