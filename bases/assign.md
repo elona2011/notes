@@ -9,3 +9,19 @@ a.x = a = {n:2}; //首先在对象上创建属性，得到对象{n:1, x:undefine
 alert(a.x);// --> undefined
 alert(b.x);// --> {n:2}
 ```
+
+# let
+
+```js
+for(var i=1;i<5;i++){
+ setTimeout(function timer(){
+  console.log(i);
+ },i*1000);
+} //输出4个5
+
+for(let i=1;i<5;i++){
+ setTimeout(function timer(){
+  console.log(i);
+ },i*1000);
+} //输出1，2，3，4
+```

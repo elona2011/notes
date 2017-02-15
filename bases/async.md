@@ -1,18 +1,20 @@
 # XMLHttpRequest
 
 ```js
+var fd = new FormData();
+fd.append('file', value);
 var xhr = new XMLHttpRequest();
-xhr.open('get', 'http://yanjie.me/');
-xhr.onload = function() { /* do something */ }
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.setRequestHeader('Content-Length', JSON.stringify(data).length);
-xhr.send(JSON.stringify(data));
-xhr.status
-xhr.responseText
+xhr.addEventListener('load', function (e) {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        console.log(xhr.responseText);
+    }
+})
+xhr.addEventListener('error', function (e) {
+    document.getElementById('uploaderror').textContent = '上传失败'
+})
+xhr.open('POST', '/customservice/upload')
+xhr.send(fd)
 ```
-
-
-https的页面请求http的ajax请求会报错
 
 # 代码
 
@@ -66,4 +68,16 @@ $.ajax({
         e
     }
 });
+```
+
+# Async/Await
+
+http://cnodejs.org/topic/5640b80d3a6aa72c5e0030b6
+
+遍历数组形式的异步操作
+
+```js
+await Promise.all(arr.map(async function (e,i) {
+    await operation...
+}))
 ```

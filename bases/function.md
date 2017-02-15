@@ -100,3 +100,22 @@ Vue.prototype.parseDom = () =>{
   this.data //此处的this===that，不能指向调用时的对象
 }
 ```
+
+# class
+
+class实际上就是一个function，一个构造函数。但它不可以被直接执行，只能被new。
+
+与ES5一样，实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）
+
+```js
+class Point {
+    constructor(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+toString() {
+    return ‘(‘+this.x+’, ‘+this.y+’)’;
+    }
+}
+```
