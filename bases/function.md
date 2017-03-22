@@ -92,7 +92,9 @@ b(); //抛出一个referenceError,b函数只能在函数表达式内部访问
 
 # arrow function
 
-箭头函数不要使用于prototype的函数定义
+箭头函数内部实际是没有this, arguments这些默认参数
+
+不要使用于prototype的函数定义
 
 ```
 let that = this;
