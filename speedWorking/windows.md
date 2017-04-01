@@ -2,6 +2,9 @@
 
 ```
 win+2 启动任务栏上第2个程序，如有多个则切换
+win+leftArrow 当前窗口左半屏
+win+upArrow 当前窗口全屏
+win+shift+leftArrow(rightArrow) 当前窗口移动至扩展屏
 ```
 
 # 将CapsLock修改为Ctrl键
