@@ -4,8 +4,6 @@
 
 # trigger event manually
 
-chrome/ff
-
 ```js
 if (typeof window.Event == "function") {
     //chrome/ff
