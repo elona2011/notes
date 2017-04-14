@@ -1,3 +1,10 @@
+# command line
+
+```
+tasklist 显示所有任务
+taskkill /im nginx.exe /f
+```
+
 # keybinding
 
 ```
