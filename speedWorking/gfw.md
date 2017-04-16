@@ -4,13 +4,15 @@ https://github.com/hawx1993/Accessing-Google
 
 ## 客户端
 
-ubuntu software center中搜索shadowsocks并安装，可获得两个命令行工具，``ssserver``和``sslocal``
+```
+sudo apt install shadowsocks
+sslocal -c /etc/shadowsocks/config.json
+```
+
+install ``ssserver``和``sslocal``
 
 shadowsocks的安装目录在``/etc/shadowsocks``，该目录下有``config.json``文件可以配置远程服务器参数和本地socks5参数。参数配置好后运行``sslocal``，就在本地启动了socks5代理。若需同时指定多个服务端ip，可参考``"server":["1.1.1.1","2.2.2.2"],``
 
-```
-sslocal -c /etc/shadowsocks/config.json
-```
 
 ## 具体安装
 
