@@ -106,6 +106,10 @@ set undodir=~/vimtmp//
 
 # Plugins
 
+## pathogen
+
+https://github.com/tpope/vim-pathogen
+
 ## Vundle
 
 win7下安装注意：
