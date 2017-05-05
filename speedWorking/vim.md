@@ -52,6 +52,12 @@ D	删除游标所在处，到该行的最后一个字符
 p //在当前行粘贴
 ```
 
+```
+"+p 在当前光标前插入系统剪切板内容 
+```
+
+https://askubuntu.com/questions/70334/shortcuts-in-gvim
+
 # 显示
 
 ```
@@ -104,6 +110,12 @@ set directory=~/vimtmp//
 set undodir=~/vimtmp//
 ```
 
+# colorscheme
+
+```
+colorscheme slate
+```
+
 # Plugins
 
 ## pathogen
@@ -119,4 +131,14 @@ win7下安装注意：
 ```
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
 call vundle#begin('$VIM/vimfiles/bundle/')
+```
+
+## NERDTree
+
+```
+ctrl+w w    move between open windows
+t   open new tab
+T   open new tab while staying in current tab
+gt  cycle though all tabs
+gT  cycle though all tabs (moves to the left)
 ```
