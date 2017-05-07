@@ -1,3 +1,13 @@
+# update
+
+```
+git clone https://github.com/vim/vim.git
+cd vim/src
+make
+sudo make install
+```
+aaaa
+
 # vimtutor
 
 ```
