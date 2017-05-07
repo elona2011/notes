@@ -6,7 +6,6 @@ cd vim/src
 make
 sudo make install
 ```
-aaaa
 
 # vimtutor
 
