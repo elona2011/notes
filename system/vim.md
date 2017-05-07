@@ -151,3 +151,5 @@ T   open new tab while staying in current tab
 gt  cycle though all tabs
 gT  cycle though all tabs (moves to the left)
 ```
+
+## fugitive.vim
