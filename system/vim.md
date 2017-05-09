@@ -1,4 +1,7 @@
 # update
+11
+222
+33
 
 ```
 git clone https://github.com/vim/vim.git
@@ -7,10 +10,17 @@ make
 sudo make install
 ```
 
-# vimtutor
+# reload .vimrc
+
+```
+:so %
+```
+
+# help
 
 ```
 vimtutor
+:help =
 ```
 
 # 重复之前操作
@@ -63,6 +73,9 @@ p //在当前行粘贴
 
 ```
 "+p 在当前光标前插入系统剪切板内容 
+
+gg
+=G 格式化当前文件
 ```
 
 https://askubuntu.com/questions/70334/shortcuts-in-gvim
@@ -90,6 +103,25 @@ gt,gT //切换tab页
 ```
 
 # gVim设置
+
+设置indent
+
+```
+set tabstop=4
+set softtabstop=0
+set noexpandtab
+set shiftwidth=4
+set shiftround
+set autoindent
+set copyindent
+```
+
+NERDTree
+
+```
+cd ~/documents/svn
+map <F2> :NERDTreeToggle<CR>
+```
 
 ## windows下乱码
 
@@ -153,3 +185,9 @@ gT  cycle though all tabs (moves to the left)
 ```
 
 ## fugitive.vim
+
+# windows
+
+pathogen安装的plugins要放置在``\vimfiles\bundle``目录下
+
+http://stackoverflow.com/questions/11571723/installing-pathogen-vim-plugin-on-windows
