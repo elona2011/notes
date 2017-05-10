@@ -1,7 +1,4 @@
 # update
-11
-222
-33
 
 ```
 git clone https://github.com/vim/vim.git
@@ -105,6 +102,10 @@ gt,gT //切换tab页
 # gVim设置
 
 设置indent
+
+python:
+
+https://github.com/Vimjas/vim-python-pep8-indent
 
 ```
 set tabstop=4
