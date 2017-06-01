@@ -7,6 +7,32 @@ git config --global user.name "yourname"
 git config --global user.email youremail
 ```
 
+# setting
+
+windows
+
+```json
+{
+    // "http.proxy": "http://10.19.110.55:8080",
+    "projectManager.openInNewWindow": false,
+    "window.zoomLevel": 0,
+    "editor.snippetSuggestions": "top",
+    "html.format.indentInnerHtml": false,
+    "git.confirmSync": false,
+    "editor.wordWrap": "on",
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-d>": false,
+        "<C-f>": false,
+        "<C-x>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-w>": false
+    }
+}
+```
+
 # key binding
 
 ```
