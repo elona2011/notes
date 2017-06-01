@@ -46,3 +46,11 @@ http://askubuntu.com/questions/149971/how-do-you-remap-a-key-to-the-caps-lock-ke
 fcitx可配，ibus未成功
 
 http://www.jianshu.com/p/4793e55751ec
+
+# apt-get
+
+如果出现无法定位软件包，可以``sudo apt-get update``
+
+# bandwidth
+
+http://askubuntu.com/questions/20872/how-do-i-limit-internet-bandwidth
