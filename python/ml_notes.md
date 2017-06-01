@@ -14,9 +14,13 @@ print(type(data)) #返回是pandas的DataFrame实例
 
 数据整理
 
-```df
+```py
 df = df[['open','high','low','close']]
 ```
 
 ## p.3
 
+```py
+df.fillna(-99999, inplace=True)
+df.dropna(inplace=True)
+```
