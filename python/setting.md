@@ -16,3 +16,20 @@ set http_proxy=http://10.19.110.55:8080
 set https_proxy=http://10.19.110.55:8080
 python get-pip.py
 ```
+
+# module version
+
+```bash
+$ pip freeze |grep sklearn 
+```
+
+或
+
+```py
+>>> import sklearn
+>>> sklearn.__version__
+```
+
+pip方法不能正常显示时，可用py命令行
+
+https://stackoverflow.com/questions/20180543/how-to-check-version-of-python-modules
