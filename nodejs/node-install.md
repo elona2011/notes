@@ -22,6 +22,15 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | b
 
 http://www.cnblogs.com/dubaokun/p/3558848.html
 
+## ubuntu
+
+```
+sudo apt-get update
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
 # Install nginx
 
 ```
