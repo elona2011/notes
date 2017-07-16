@@ -1,7 +1,7 @@
 # 重启
 
 ```bash
-/usr/local/nginx/sbin/nginx -s reload
+sudo systemctl restart nginx
 ```
 
 # 配置
