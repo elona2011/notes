@@ -5,10 +5,11 @@
 # trigger event manually
 
 ```js
-if (typeof window.Event == "function") {
+if (typeof window.CustomEvent == "function") {
     //chrome/ff
-    var event = new Event('change', {
-        'bubbles': true
+    var event = new CustomEvent('change', {
+        bubbles: true,
+        detail: 'aaaaa'
     });
     document.getElementById('deadline').dispatchEvent(event);
 } else {
