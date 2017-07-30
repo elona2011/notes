@@ -1,3 +1,9 @@
+# usage
+
+```
+ssh -p [port] [ip]
+```
+
 # 使用shh免密登陆vps
 
 ```
