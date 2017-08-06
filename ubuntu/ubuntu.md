@@ -48,3 +48,7 @@ http://askubuntu.com/questions/149971/how-do-you-remap-a-key-to-the-caps-lock-ke
 # bandwidth
 
 http://askubuntu.com/questions/20872/how-do-i-limit-internet-bandwidth
+
+# proxy
+
+首次使用chrome需设置系统proxy，对于ss，只要手动设置socks代理，不要设置http/https代理，否则会连不上
