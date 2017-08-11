@@ -50,3 +50,18 @@ server{
 ```
 
 http://blog.csdn.net/newborn2012/article/details/24248961
+
+# gzip
+
+```
+gzip             on;
+#gzip_min_length  1000;
+gzip_http_version 1.1;
+gzip_vary on;
+gzip_comp_level 6;
+gzip_proxied any;
+gzip_types text/plain text/html text/css application/json application/javascript application/x-javascript text/javascript text/xml application/xml application/rss+xml application/atom+xml application/rdf+xml;
+#it was gzip_buffers 16 8k; 
+gzip_buffers 128 4k; #my pagesize is 4
+gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+```
