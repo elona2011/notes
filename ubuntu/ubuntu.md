@@ -41,12 +41,6 @@ sudo dpkg-reconfigure keyboard-configuration //需重启系统，否则可能会
 
 http://askubuntu.com/questions/149971/how-do-you-remap-a-key-to-the-caps-lock-key-in-xubuntu
 
-# 输入法
-
-fcitx可配，ibus未成功
-
-http://www.jianshu.com/p/4793e55751ec
-
 # apt-get
 
 如果出现无法定位软件包，可以``sudo apt-get update``
@@ -54,3 +48,7 @@ http://www.jianshu.com/p/4793e55751ec
 # bandwidth
 
 http://askubuntu.com/questions/20872/how-do-i-limit-internet-bandwidth
+
+# proxy
+
+首次使用chrome需设置系统proxy，对于ss，只要手动设置socks代理，不要设置http/https代理，否则会连不上

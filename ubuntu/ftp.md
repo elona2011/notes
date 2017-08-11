@@ -1,3 +1,9 @@
+# commandline
+
+```
+put [filename]
+```
+
 # install & restart
 
 ```
