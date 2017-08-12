@@ -45,6 +45,8 @@ http://askubuntu.com/questions/149971/how-do-you-remap-a-key-to-the-caps-lock-ke
 
 如果出现无法定位软件包，可以``sudo apt-get update``
 
+如果``apt-get update``没有更新，那么查看``/etc/apt/sources.list``是否为空，如果为空可将``/usr/share/doc/apt/examples/sources.list``拷贝过去
+
 # bandwidth
 
 http://askubuntu.com/questions/20872/how-do-i-limit-internet-bandwidth

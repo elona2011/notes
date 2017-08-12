@@ -2,8 +2,6 @@ https://github.com/hawx1993/Accessing-Google
 
 # shadowsocks
 
-## 客户端
-
 ```
 sudo apt install shadowsocks
 sslocal -c /etc/shadowsocks/config.json
@@ -13,8 +11,69 @@ install ``ssserver``和``sslocal``
 
 shadowsocks的安装目录在``/etc/shadowsocks``，该目录下有``config.json``文件可以配置远程服务器参数和本地socks5参数。参数配置好后运行``sslocal``，就在本地启动了socks5代理。若需同时指定多个服务端ip，可参考``"server":["1.1.1.1","2.2.2.2"],``
 
+# HAProxy
 
-## 具体安装
+国内vps的出口带宽要远高于个人的出口带宽，故可以使用国内vps连国外vps来加速外网访问。
+
+```
+client  < - >  haproxy  < - >  ss server
+```
+
+以1.6版本为例：
+
+```
+apt-get install haproxy
+vi /etc/haproxy/haproxy.cfg
+service haproxy restart
+```
+
+config如下，注意mode一定要是tcp
+
+```
+global
+	log /dev/log	local0
+	log /dev/log	local1 notice
+	chroot /var/lib/haproxy
+	stats socket /run/haproxy/admin.sock mode 660 level admin
+	stats timeout 30s
+	user haproxy
+	group haproxy
+	daemon
+
+	# Default SSL material locations
+	ca-base /etc/ssl/certs
+	crt-base /etc/ssl/private
+
+	# Default ciphers to use on SSL-enabled listening sockets.
+	# For more information, see ciphers(1SSL). This list is from:
+	#  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+	ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
+	ssl-default-bind-options no-sslv3
+
+defaults
+	log	global
+	mode	tcp
+	option	dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+	errorfile 400 /etc/haproxy/errors/400.http
+	errorfile 403 /etc/haproxy/errors/403.http
+	errorfile 408 /etc/haproxy/errors/408.http
+	errorfile 500 /etc/haproxy/errors/500.http
+	errorfile 502 /etc/haproxy/errors/502.http
+	errorfile 503 /etc/haproxy/errors/503.http
+	errorfile 504 /etc/haproxy/errors/504.http
+
+frontend ss-in
+	bind *:11111
+	default_backend ss-out
+
+backend ss-out
+	server server1 111.112.119.111:11111 maxconn 48
+```
+
+# ss具体安装
 
 下面的命令，需要一行一行的执行，每输入一行命令，回车执行，如果没有报错，即为执行成功，出现确认提示的时候，输入 y 后，回车即可（每行命令可以复制后在putty里右键粘贴，回车执行）
 
