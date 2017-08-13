@@ -42,6 +42,18 @@ npm publish
 
 http://www.tuicool.com/articles/EBVNV37
 
+# Peer dependencies
+
+npm v2中peer dependencies用于将depth>0的依赖提升到depth=0，供项目直接引用
+
+npm v3中peer dependencies只起到提示的作用，还需要手工进行安装
+
+```
+npm ls --depth=0
+```
+
+https://docs.npmjs.com/how-npm-works/npm3
+
 # server
 
 启动node server
