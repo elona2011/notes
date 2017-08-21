@@ -4,7 +4,17 @@
 
 git可以说是为团队而生，而svn只是为项目而生
 
-# 添加SSH keys
+# cache password
+
+1 缓存本地
+
+```
+git config --global credential.helper cache
+```
+
+https://help.github.com/articles/caching-your-github-password-in-git/
+
+2 添加SSH key
 
 https://help.github.com/articles/generating-ssh-keys/
 
