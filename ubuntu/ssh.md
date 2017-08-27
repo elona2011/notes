@@ -20,6 +20,12 @@
 ssh -p [port] [ip]
 ```
 
+拷贝远程文件夹
+
+```
+scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
+```
+
 # 使用shh免密登陆vps
 
 ```
@@ -28,6 +34,10 @@ $ ssh-copy-id -p port user@ip
 ```
 
 如果pub_key丢失不能登录，可以到服务器上删除``~/.ssh/``目录，打开密码登录选项PasswordAuthentication，就可以密码登录，并上传新的pub_key
+
+## Host key verification failed
+
+说明服务器上的host key被修改，需要在本地``~/.ssh/known_hosts``文件中删除原来的host key，登陆错误码中会提示old key的位置
 
 # ssh规则
 
