@@ -7,6 +7,14 @@ make
 sudo make install
 ```
 
+# convert between Unix and Windows text file
+
+```
+:set ff=unix
+:set ff=dos
+:x
+```
+
 # reload .vimrc
 
 ```
@@ -20,13 +28,15 @@ vimtutor
 :help =
 ```
 
-# 重复之前操作
+# Keys
+
+## 重复之前操作
 
 ```
 .
 ```
 
-# 光标移动
+## 光标移动
 
 ```
 w //向后移动一个word
@@ -41,14 +51,14 @@ G //光标移动到最后1行
 % //光标移动到配对的另一个括号
 ```
 
-# 翻页
+## 翻页
 
 ```
 ctrl+d 向后翻半页
 ctrl+u 向前翻半页
 ```
 
-# 复制 粘贴 剪切 删除
+## 复制 粘贴 剪切 删除
 
 复制是y，粘贴是p，剪切是d
 
@@ -77,13 +87,13 @@ gg
 
 https://askubuntu.com/questions/70334/shortcuts-in-gvim
 
-# 显示
+## 显示
 
 ```
 ctrl-g 显示行号
 ```
 
-# 文件
+## 文件
 
 ```
 :browse old //打开文件历史
@@ -92,7 +102,7 @@ ctrl-g 显示行号
 :Sex //open explorer in a new horizontal window
 ```
 
-# Tab页
+## Tab页
 
 ```
 :tabnew //打开新tab页
