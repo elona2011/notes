@@ -1,3 +1,5 @@
+# Revealing Module Pattern
+
 ```js
 var module = (function () {
 

@@ -1,3 +1,5 @@
+# Publish and Subscribe Pattern
+
 ```js
 var pubsub = {};
  

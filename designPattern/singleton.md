@@ -1,3 +1,5 @@
+# Singleton
+
 ```js
 var mySingleton = (function () {
   var instance;
