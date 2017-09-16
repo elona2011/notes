@@ -47,3 +47,7 @@ rem是CSS3新增的一个相对单位（root em，根em），这个单位引起�
 ```
 p {font-size:14px; font-size:.875rem;}
 ```
+
+# box-shadow可以绘制像素级图案
+
+https://journal.helabs.com/pocket-guide-to-css-only-drawings-and-animations-781470436ecc#.ydkkx0dmy
