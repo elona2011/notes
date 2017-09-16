@@ -93,3 +93,7 @@ http://www.gigamonkeys.com/code-reading/
 
 For AngularJS, I think the best place to start is $scope.$apply(), as this ties together changes to the model and the view. From there, move to one of the simpler directives, perhaps ng:value.
 Keep the documentation open while you're doing this.
+
+# ES6
+
+http://martinmicunda.com/2015/07/13/how-to-use-ES2016-decorators-to-avoid-angular-1x-boilerplate-code/
