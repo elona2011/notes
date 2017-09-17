@@ -1,5 +1,9 @@
 # child_process in Windows
 
+windows下npm相关的命令都要加上``.cmd``
+
+https://github.com/nodejs/node/issues/8077
+
 node start 'npm start'
 
 ```js
@@ -9,6 +13,12 @@ const viewExec = spawn('npm.cmd', ['start'],{
     cwd:'C:\\Users\\Jie\\Documents\\component-view'
 })
 viewExec.stdout.pipe(process.stdout)
+```
+
+node start typescript commandline
+
+```js
+spawn('tsc.cmd')
 ```
 
 terminate process
