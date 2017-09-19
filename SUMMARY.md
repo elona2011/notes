@@ -69,7 +69,7 @@
     * [vscode](tools/vscode.md)
 * [ubuntu](ubuntu/ubuntu.md)
     * [ftp](ubuntu/ftp.md)
-    * [https](ubuntu/https.md)
+    * [http2](ubuntu/http2.md)
     * [nginx](ubuntu/nginx.md)
     * [rime](ubuntu/rime.md)
     * [shell](ubuntu/shell.md)
