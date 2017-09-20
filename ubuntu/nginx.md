@@ -11,6 +11,20 @@ vi /usr/local/nginx/conf/nginx.conf #redhat位置
 sudo vi /etc/nginx/sites-available/default #ubuntu位置
 ```
 
+/etc/nginx/sites-available/default:
+
+```
+server {
+    root /home/j/www;
+    server_name xxx.me www.xxx.me;
+
+    location /csrf/update {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_redirect default;
+    }
+}
+```
+
 # 反向代理
 
 ```
