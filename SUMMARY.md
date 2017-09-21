@@ -45,6 +45,8 @@
     * [pm2](/nodejs/pm2.md)
     * [thinkjs](/nodejs/thinkjs.md)
 * [security](security/csrf.md)
+    * [xss](security/xss.md)
+    * [csrf](security/csrf.md)
 * [Test](test/test.md)
 * [design pattern](/designPattern/mp.md)
     * [mp](/designPattern/mp.md)
