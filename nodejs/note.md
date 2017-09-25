@@ -15,6 +15,16 @@ const viewExec = spawn('npm.cmd', ['start'],{
 viewExec.stdout.pipe(process.stdout)
 ```
 
+```js
+viewExec.stdout.on('data', (d: string) => {
+    //输出无空行
+    process.stdout.write(`pcss: ${d}`)
+
+    //输出有空行
+    // console.log(`pcss: ${d}`)
+})
+```
+
 node start typescript commandline
 
 ```js
