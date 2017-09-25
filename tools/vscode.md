@@ -7,6 +7,68 @@ git config --global user.name "yourname"
 git config --global user.email youremail
 ```
 
+# test config
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${file}",
+        "args": ["-r", "ts-node/register", "${relativeFile}"],
+        "cwd": "${workspaceRoot}",
+        "protocol": "inspector"
+    },
+    {
+        "name": "Test",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+        "args": ["-r", "ts-node/register", "${relativeFile}"],
+        "cwd": "${workspaceRoot}",
+        "protocol": "inspector"
+    }]
+}
+```
+
+# plugin
+
+## Beautify
+
+识别pcss，且可以format
+
+```json
+"beautify.language": {
+    "js": {
+        "type": [
+            "javascript",
+            "json"
+        ],
+        "filename": [
+            ".jshintrc",
+            ".jsbeautify"
+        ]
+    },
+    "css": {
+        "type": [
+            "css",
+            "css"
+        ],
+        "ext": [
+            "css",
+            "pcss"
+        ]
+    },
+    "html": [
+        "htm",
+        "html"
+    ]
+}
+```
+
 # setting
 
 windows
