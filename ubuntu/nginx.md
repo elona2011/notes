@@ -47,19 +47,19 @@ location /persons {
 
 ```
 server{  
-        resolver 127.0.1.1;  
-        resolver_timeout 30s;   
-        listen 8000;  
-        location / {  
-                proxy_pass http://$http_host$request_uri;  
-                proxy_set_header Host $http_host;  
-                proxy_buffers 256 4k;  
-                proxy_max_temp_file_size 0;  
-                proxy_connect_timeout 30;  
-                proxy_cache_valid 200 302 10m;  
-                proxy_cache_valid 301 1h;  
-                proxy_cache_valid any 1m;  
-        }  
+    resolver 127.0.1.1;  
+    resolver_timeout 30s;   
+    listen 8000;  
+    location / {  
+        proxy_pass http://$http_host$request_uri;  
+        proxy_set_header Host $http_host;  
+        proxy_buffers 256 4k;  
+        proxy_max_temp_file_size 0;  
+        proxy_connect_timeout 30;  
+        proxy_cache_valid 200 302 10m;  
+        proxy_cache_valid 301 1h;  
+        proxy_cache_valid any 1m;  
+    }  
 }  
 ```
 

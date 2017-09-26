@@ -1,3 +1,14 @@
+# BFC
+
+A block formatting context is an HTML box that satisfies at least one of the following conditions:
+
+* The value of float is not none
+* The value of position is neither static nor relative
+* The value of display is table-cell, table-caption, inline-block, flex, or inline-flex
+* The value of overflow is not visible.
+
+https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
+
 # input-group
 
 ```
@@ -42,7 +53,9 @@ em是相对长度单位。相对于当前对象内文本的字体尺寸。如当
 
 ## rem特点
 
-rem是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。下面就是一个例子：
+rem是CSS3新增的一个相对单位（root em）。使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。只修改根元素就成比例地调整所有字体大小，避免字体大小逐层复合的连锁反应。
+
+对于不支持它的浏览器，可多写一个绝对单位的声明：
 
 ```
 p {font-size:14px; font-size:.875rem;}
