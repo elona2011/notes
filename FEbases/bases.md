@@ -4,7 +4,16 @@
 
 1 函数内部可以声明一个undefined变量取代undefined关键字
 
-2 少打几个字
+# comparision
+
+If the two operands are not of the same type, JavaScript converts the operands then applies strict comparison. If either operand is a number or a boolean, the operands are converted to numbers if possible; else if either operand is a string, the other operand is converted to a string if possible.
+
+```js
+" " == false; // true
+' ' == undefined; // false
+```
+
+https://stackoverflow.com/questions/4216362/javascript-white-space-string-boolean-conversion/4216618#4216618
 
 # Promise
 
