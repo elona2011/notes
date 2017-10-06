@@ -1,3 +1,13 @@
+# require
+
+user code is wrapped as follow:
+
+```js
+(function(exports,require,module,__filename,__dirname){
+    // your code
+})
+```
+
 # child_process in Windows
 
 windows下npm相关的命令都要加上``.cmd``

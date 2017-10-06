@@ -18,3 +18,7 @@ function reload(obj,name){
 }
 reload(A,'b')
 ```
+
+https
+ast
+mysql索引
