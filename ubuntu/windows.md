@@ -3,6 +3,8 @@
 ```
 tasklist 显示所有任务
 taskkill /im nginx.exe /f
+netsh interface set interface "本地连接" admin=disable
+netsh interface set interface "无线网络连接" admin=enable
 ```
 
 # keybinding
