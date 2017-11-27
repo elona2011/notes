@@ -1,3 +1,12 @@
+# Install
+
+```
+sudo apt-get update
+sudo apt-get install nginx
+```
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04
+
 # 重启
 
 ```bash
