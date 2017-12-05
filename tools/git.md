@@ -18,6 +18,16 @@ https://help.github.com/articles/caching-your-github-password-in-git/
 
 https://help.github.com/articles/generating-ssh-keys/
 
+# gitignore
+
+```sh
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+```
+
+https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+
 # 远程库克隆
 
 ```
