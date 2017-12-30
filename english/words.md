@@ -5,3 +5,5 @@
 | throttle | 节流      |
 
 standard deviation 标准差
+
+discrepancy
