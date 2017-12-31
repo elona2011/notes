@@ -1,4 +1,4 @@
-# Two Sum
+# 1. Two Sum
 
 ```js
 /**
@@ -27,7 +27,7 @@ var twoSum = function(nums, target) {
 }
 ```
 
-# 2.Add Two Numbers
+# 2. Add Two Numbers
 
 ```js
 /**
@@ -43,32 +43,60 @@ var twoSum = function(nums, target) {
  * @return {ListNode}
  */
 var addTwoNumbers = function(l1, l2) {
-    let sum = l1.val + l2.val,
-        more=0,
-        origin,
-        last
-    
-    if(sum>9){
-        more = 1
-        origin = new ListNode(sum -10)
-    }else{
-        origin = new ListNode(sum)
+  let sum = l1.val + l2.val,
+    more = 0,
+    origin,
+    last
+
+  if (sum > 9) {
+    more = 1
+    origin = new ListNode(sum - 10)
+  } else {
+    origin = new ListNode(sum)
+  }
+  last = origin
+
+  while ((l1 && l1.next) || (l2 && l2.next) || more) {
+    l1 = l1 ? l1.next : null
+    l2 = l2 ? l2.next : null
+    sum = (l1 && l1.val) + (l2 && l2.val) + more
+    if (sum > 9) {
+      more = 1
+      last = last.next = new ListNode(sum - 10)
+    } else {
+      more = 0
+      last = last.next = new ListNode(sum)
     }
-    last = origin
-    
-    while(l1&&l1.next || l2&&l2.next || more){
-        l1 = l1?l1.next:null
-        l2 = l2?l2.next:null
-        sum = (l1 && l1.val)+(l2&&l2.val)+more
-        if(sum>9){
-            more = 1
-            last = last.next = new ListNode(sum-10)
-        }else{
-            more = 0
-            last = last.next = new ListNode(sum)
-        }
-    }
-    return origin
-};
+  }
+  return origin
+}
 ```
 
+# 3. Longest Substring Without Repeating Characters
+
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  let word = {},
+    max = 0
+
+  for (let i = 0; i < s.length; i++) {
+    let p = word[s[i]]
+    if (p) {
+      max = Math.max(max, Object.keys(word).length)
+      if(max >= 26) return max
+      for (let n in word) {
+        if (word[n] <= p) {
+          delete word[n]
+        }
+      }
+    }
+    word[s[i]] = i
+  }
+  max = Math.max(max, Object.keys(word).length)
+  return max
+}
+```
