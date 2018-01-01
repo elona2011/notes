@@ -187,3 +187,35 @@ var convert = function(s, numRows) {
   return r
 }
 ```
+
+# 7. Reverse Integer
+
+```js
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+  let isNegative = false,
+    r
+
+  if (x < 0) {
+    isNegative = true
+    x = -x
+  }
+  r = +(x + '')
+    .split('')
+    .reverse()
+    .join('')
+  debugger
+  if (r > Math.pow(2, 31)) {
+    return 0
+  } else {
+    if (isNegative) {
+      return -r
+    } else {
+      return r
+    }
+  }
+}
+```
