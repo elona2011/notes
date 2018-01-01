@@ -1,6 +1,7 @@
 # Summary
 
-* [FEbases](/FEbases/bases.md)
+* [Algorithm](/algorithm/leetCode.md)
+* [javascript](/FEbases/bases.md)
     * [assign](/FEbases/assign.md)
     * [async](/FEbases/async.md)
     * [cache](/FEbases/cache.md)
@@ -15,6 +16,7 @@
     * [template](/FEbases/template.md)
     * [typeof](/FEbases/typeof.md)
 * [Browser](/FEbases/Browser/chrome.md)
+    * [DOM](/FEbases/DOM/dom.md)
     * [upload](/FEbases/Browser/upload.md)
     * [cookie](/FEbases/Browser/cookie.md)
     * [cors](/FEbases/Browser/cors.md)
@@ -23,8 +25,6 @@
     * [expression](/FEbases/css/expression.md)
     * [flexbox](/FEbases/css/flexbox.md)
     * [transform](/FEbases/css/transform.md)
-* [DOM](/FEbases/DOM/dom.md)
-    * [Node](/FEbases/DOM/node.md)
 * [libs](/FEbases/libs/bootstrap.md)
     * [bootstrap](/FEbases/libs/bootstrap.md)
     * [jquery](/FEbases/libs/jquery.md)
