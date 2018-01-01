@@ -87,7 +87,7 @@ var lengthOfLongestSubstring = function(s) {
     let p = word[s[i]]
     if (p) {
       max = Math.max(max, Object.keys(word).length)
-      if(max >= 26) return max
+      if (max >= 26) return max
       for (let n in word) {
         if (word[n] <= p) {
           delete word[n]
@@ -98,5 +98,92 @@ var lengthOfLongestSubstring = function(s) {
   }
   max = Math.max(max, Object.keys(word).length)
   return max
+}
+```
+
+# 5. Longest Palindromic Substring
+
+```js
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+  let r = ''
+
+  for (let i = 0; i < s.length; i++) {
+    debugger
+    let p = ''
+    if (s[i] === s[i + 1]) {
+      p = s[i] + s[i + 1]
+
+      let j = 2,
+        a = i + 1 - j,
+        b = i + j
+      while (b < s.length && a >= 0) {
+        if (s[b] === s[a]) {
+          p = s[a] + p + s[b]
+          j++
+          a = i + 1 - j
+          b = i + j
+        } else break
+      }
+      if (p.length > r.length) r = p
+    }
+    if (s[i - 1] && s[i - 1] === s[i + 1]) {
+      p = s[i - 1] + s[i] + s[i + 1]
+
+      let j = 2,
+        a = i - j,
+        b = i + j
+      while (b < s.length && a >= 0) {
+        if (s[b] === s[a]) {
+          p = s[a] + p + s[b]
+          j++
+          a = i - j
+          b = i + j
+        } else break
+      }
+      if (p.length > r.length) r = p
+    }
+  }
+
+  if (r === '') r = s[0]
+  return r
+}
+```
+
+# 6. ZigZag Conversion
+
+```js
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function(s, numRows) {
+  let r = '',
+    index = 0
+  if (numRows === 1) return s
+  while (index < s.length) {
+    r += s[index]
+    index += (numRows - 1) * 2
+  }
+  for (let i = 1; i < numRows - 1; i++) {
+    index = i
+    while (index < s.length) {
+      r += s[index]
+      index += (numRows - 1 - i) * 2
+      if (index >= s.length) break
+      r += s[index]
+      index += i * 2
+    }
+  }
+  index = numRows - 1
+  while (index < s.length) {
+    r += s[index]
+    index += (numRows - 1) * 2
+  }
+  return r
 }
 ```
