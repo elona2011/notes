@@ -219,3 +219,68 @@ var reverse = function(x) {
   }
 }
 ```
+
+# 9. Palindrome Number
+
+```js
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+  if (x < 0) return false
+  if (
+    (x + '')
+      .split('')
+      .reverse()
+      .join('') ===
+    x + ''
+  )
+    return true
+  else return false
+}
+```
+
+# 10. Regular Expression Matching
+
+```js
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {boolean}
+ */
+var isMatch = function(s, p) {
+  let pi = 0,
+    si = 0,
+    maxNum
+  debugger
+  while (pi < p.length) {
+    if (p[pi] === '.') {
+      if (p[pi + 1] === '*') {
+        return expand('.')
+      } else {
+        si++
+        pi++
+      }
+    } else {
+      if (p[pi + 1] === '*') {
+        return expand(p[pi])
+      } else if (p[pi] === s[si]) {
+        si++
+        pi++
+      } else return false
+    }
+  }
+  if (pi === p.length && si === s.length) {
+    return true
+  } else return false
+
+  function expand(c) {
+    for (let i = s.length - si; i >= 0; i--) {
+      let newp = c.repeat(i) + p.slice(pi + 2)
+      if (isMatch(s.slice(si), newp)) return true
+    }
+    return false
+  }
+}
+```

@@ -1,6 +1,7 @@
 # Summary
 
 * [Algorithm](/algorithm/leetCode.md)
+    * [LeetCode](/algorithm/leetCode.md)
 * [javascript](/FEbases/bases.md)
     * [assign](/FEbases/assign.md)
     * [async](/FEbases/async.md)
