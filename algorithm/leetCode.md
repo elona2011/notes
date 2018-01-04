@@ -284,3 +284,56 @@ var isMatch = function(s, p) {
   }
 }
 ```
+
+# 11. Container With Most Water
+
+```js
+var maxArea = function(height) {
+  let i = 0,
+    j = height.length - 1,
+    min = Math.min(height[i], height[j]),
+    r = (j - i) * min
+
+  while (1) {
+    if (i >= j) break
+
+    if (height[i] <= min) {
+      i++
+      continue
+    }
+    if (height[j] <= min) {
+      j--
+      continue
+    }
+    min = Math.min(height[i], height[j])
+    r = Math.max(r, (j - i) * min)
+  }
+  return r
+}
+```
+
+# 14. Longest Common Prefix
+
+```js
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+  debugger
+  if (strs.length === 0) return ''
+  else if (strs.length === 1) return strs[0]
+  else return strs.reduce((a, b) => prefix(a, b))
+
+  function prefix(s1, s2) {
+    let len = Math.min(s1.length, s2.length),
+      r = ''
+
+    for (let i = 0; i < len; i++) {
+      if (s1[i] === s2[i]) r += s1[i]
+      else return r
+    }
+    return r
+  }
+}
+```
