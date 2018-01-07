@@ -1,6 +1,6 @@
 # 1. Two Sum
 
-对于无序数列，可用hash；但如果是有序数列，可采用二分法。如果是求所有解，则可使用两个相向移动的指针索引，感觉会比二分法快，详见3Sum
+对于无序数列，可用 hash；但如果是有序数列，可采用二分法。如果是求所有解，则可使用两个相向移动的指针索引，感觉会比二分法快，详见 3Sum
 
 ```js
 /**
@@ -342,7 +342,7 @@ var longestCommonPrefix = function(strs) {
 
 # 15. 3Sum
 
-主要思路是将3Sum转化为2Sum，可行但是效率低。排序后采用二分法，可以提高一定效率。但由于此题求所有解，采用两个相向移动的指针将更快，见Discuss
+主要思路是将 3Sum 转化为 2Sum，可行但是效率低。排序后采用二分法，可以提高一定效率。但由于此题求所有解，采用两个相向移动的指针将更快，见 Discuss
 
 ```js
 /**
@@ -350,42 +350,81 @@ var longestCommonPrefix = function(strs) {
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-    let r = [],i=0
-    debugger
-    nums.sort((a,b)=>a-b)
-    
-    for(;i<nums.length;i++){
-        if(nums[i]>0)break
-        if(i>0&& nums[i]===nums[i-1])continue
-        
-        let sum = 0-nums[i]    
-        if(nums[i+1]>sum/2)break
-        for(let j=i+1;j<nums.length-1;j++){
-            if(j>i+1&&nums[j]===nums[j-1])continue
-            let start = j+1,
-                end=nums.length-1,
-                value=sum-nums[j],
-                index =Math.floor((start+end)/2)
-            if(nums[start]===value){
-                r.push([nums[i],nums[j],nums[start]])
-            }else if(nums[end]===value){
-                r.push([nums[i],nums[j],nums[end]])
-            }else{
-                while(index>start){
-                    if(nums[index]>value){
-                        end=index
-                        index =Math.floor((start+end)/2)
-                    }else if(nums[index]<value){
-                        start = index
-                        index =Math.floor((start+end)/2)
-                    }else{
-                        r.push([nums[i],nums[j],nums[index]])
-                        break
-                    }
-                }
-            }
+  let r = [],
+    i = 0
+  debugger
+  nums.sort((a, b) => a - b)
+
+  for (; i < nums.length; i++) {
+    if (nums[i] > 0) break
+    if (i > 0 && nums[i] === nums[i - 1]) continue
+
+    let sum = 0 - nums[i]
+    if (nums[i + 1] > sum / 2) break
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      if (j > i + 1 && nums[j] === nums[j - 1]) continue
+      let start = j + 1,
+        end = nums.length - 1,
+        value = sum - nums[j],
+        index = Math.floor((start + end) / 2)
+      if (nums[start] === value) {
+        r.push([nums[i], nums[j], nums[start]])
+      } else if (nums[end] === value) {
+        r.push([nums[i], nums[j], nums[end]])
+      } else {
+        while (index > start) {
+          if (nums[index] > value) {
+            end = index
+            index = Math.floor((start + end) / 2)
+          } else if (nums[index] < value) {
+            start = index
+            index = Math.floor((start + end) / 2)
+          } else {
+            r.push([nums[i], nums[j], nums[index]])
+            break
+          }
         }
+      }
     }
-    return r    
-};
+  }
+  return r
+}
+```
+
+# 16. 3Sum Closest
+
+双指针移动算法，适合有序数列使用
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var threeSumClosest = function(nums, target) {
+  debugger
+  let r = nums[0] + nums[1] + nums[2] - target
+  nums.sort((a, b) => a - b)
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue
+
+    let j = i + 1,
+      k = nums.length - 1
+    while (j < k) {
+      let sum = nums[i] + nums[j] + nums[k],
+        newr = sum - target
+
+      r = Math.abs(newr) < Math.abs(r) ? newr : r
+
+      if (sum > target) {
+        k--
+      } else if (sum < target) {
+        j++
+      } else {
+        return target
+      }
+    }
+  }
+  return target + r
+}
 ```
