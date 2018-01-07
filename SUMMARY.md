@@ -67,7 +67,7 @@
     * [sentdexNote](/python/sentdexPythonNote.md)
 * [tools](tools/vscode.md)
     * [atom](tools/atom.md)
-    * [gfw](tools/gfw.md)
+    * [vps](tools/vps.md)
     * [git](tools/git.md)
     * [grub](tools/grub.md)
     * [putty](tools/putty.md)
