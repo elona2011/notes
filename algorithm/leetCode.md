@@ -1,3 +1,5 @@
+常见题：15,16
+
 # 1. Two Sum
 
 对于无序数列，可用 hash；但如果是有序数列，可采用二分法。如果是求所有解，则可使用两个相向移动的指针索引，感觉会比二分法快，详见 3Sum
@@ -426,5 +428,79 @@ var threeSumClosest = function(nums, target) {
     }
   }
   return target + r
+}
+```
+
+# 17. Letter Combinations of a Phone Number
+
+```js
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function(digits) {
+  debugger
+  let dict = {
+    2: ['a', 'b', 'c'],
+    3: ['d', 'e', 'f'],
+    4: ['g', 'h', 'i'],
+    5: ['j', 'k', 'l'],
+    6: ['m', 'n', 'o'],
+    7: ['p', 'q', 'r', 's'],
+    8: ['t', 'u', 'v'],
+    9: ['w', 'x', 'y', 'z'],
+  }
+  if (digits.length === 0) return []
+  if (digits.length === 1) return dict[digits]
+
+  return Array.from(digits).reduce(
+    (a, b) => {
+      let r = []
+      for (let n of dict[b]) {
+        r = r.concat(a.map(e => e + n))
+      }
+      return r
+    },
+    ['']
+  )
+}
+```
+
+# 18. 4Sum
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+ */
+var fourSum = function(nums, target) {
+  let r = []
+  nums.sort((a, b) => a - b)
+  debugger
+  for (let [i, n] of nums.entries()) {
+    if (i > 0 && n === nums[i - 1]) continue
+    for (let j = i + 1; j < nums.length - 2; j++) {
+      if (j > i + 1 && nums[j] === nums[j - 1]) continue
+      let k = j + 1,
+        l = nums.length - 1
+
+      while (l > k) {
+        sum = nums[i] + nums[j] + nums[k] + nums[l]
+        if (sum > target) {
+          l--
+        } else if (sum < target) {
+          k++
+        } else {
+          r.push([nums[i], nums[j], nums[k], nums[l]])
+          do {
+            l--
+            k++
+          } while (nums[l] === nums[l + 1] && nums[k] === nums[k - 1])
+        }
+      }
+    }
+  }
+  return r
 }
 ```
