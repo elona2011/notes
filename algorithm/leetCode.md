@@ -504,3 +504,213 @@ var fourSum = function(nums, target) {
   return r
 }
 ```
+
+# 19. Remove Nth Node From End of List
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+  let p = head,
+    bp = head,
+    ap = head,
+    i = 0
+
+  while (p.next) {
+    if (i >= n) bp = bp.next
+    if (n >= 2 && i >= n - 2) ap = ap.next
+    p = p.next
+    i++
+  }
+  if (bp === p) {
+    head = null
+  } else if (n === 1) {
+    bp.next = null
+  } else if (n === i + 1) {
+    head = head.next
+  } else {
+    bp.next = ap
+  }
+  return head
+}
+```
+
+# 20. Valid Parentheses
+
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  let stack = []
+  for (let n of s) {
+    if (n === '[' || n === '(' || n === '{') {
+      stack.push(n)
+    } else if (n === ']' || n === ')' || n === '}') {
+      let r = stack.pop()
+      if (
+        (r === '[' && n === ']') ||
+        (r === '(' && n === ')') ||
+        (r === '{' && n === '}')
+      ) {
+        continue
+      } else return false
+    }
+  }
+  if (stack.length) return false
+  else return true
+}
+```
+
+# 21. Merge Two Sorted Lists
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(l1, l2) {
+  let pl1 = l1,
+    pl2 = l2,
+    r,
+    pr
+
+  if (!l1) return l2
+  if (!l2) return l1
+  if (l1.val > l2.val) {
+    pr = r = l2
+    pl2 = pl2.next
+  } else {
+    pr = r = l1
+    pl1 = pl1.next
+  }
+
+  do {
+    if (!pl1) {
+      pr.next = pl2
+      pl2 = pl2.next
+    } else if (!pl2) {
+      pr.next = pl1
+      pl1 = pl1.next
+    } else if (pl1.val > pl2.val) {
+      pr.next = pl2
+      pl2 = pl2.next
+    } else {
+      pr.next = pl1
+      pl1 = pl1.next
+    }
+    pr = pr.next
+  } while (pl1 || pl2)
+
+  return r
+}
+```
+
+# 22. Generate Parentheses
+
+本题使用 n 简化为 n-1,n-2,...不可解，因为无法转化为简单的递归问题
+
+```js
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var generateParenthesis = function(n) {
+  let r = [
+      {
+        s: '(',
+        stack: ['('],
+      },
+    ],
+    len = 2 * n
+
+  for (let i = 1; i < len; i++) {
+    let newr = []
+    for (let n of r) {
+      if (n.stack.length === 0) {
+        newr.push({
+          s: n.s + '(',
+          stack: ['('],
+        })
+      } else if (len - i - n.stack.length < 2) {
+        n.stack.pop()
+        newr.push({
+          s: n.s + ')',
+          stack: n.stack,
+        })
+      } else {
+        newr.push({
+          s: n.s + '(',
+          stack: n.stack.concat(['(']),
+        })
+        n.stack.pop()
+        newr.push({
+          s: n.s + ')',
+          stack: n.stack,
+        })
+      }
+    }
+    r = newr
+  }
+  return r.map(n => n.s)
+}
+```
+
+# 24. Swap Nodes in Pairs
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var swapPairs = function(head) {
+  let p0,
+    p1,
+    p2,
+    p3 = null
+
+  if (head) p1 = head
+  else return head
+  if (p1.next) p2 = p1.next
+  else return head
+  if (p2.next) p3 = p2.next
+  p = p2
+  do {
+    p1.next = p3
+    p2.next = p1
+    if (p0) p0.next = p2
+    p0 = p1
+    p1 = p3
+    p2 = p3 && p3.next ? p3.next : null
+    p3 = p2 && p2.next ? p2.next : null
+  } while (p2)
+
+  return p
+}
+```
