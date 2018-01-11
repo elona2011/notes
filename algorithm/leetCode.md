@@ -714,3 +714,145 @@ var swapPairs = function(head) {
   return p
 }
 ```
+
+# 25. Reverse Nodes in k-Group
+
+```js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+var reverseKGroup = function(head, k) {
+  if (!head) return null
+  debugger
+  let p = [],
+    bp = null,
+    ap
+
+  p.push(head)
+  for (let i = 1; i < k; i++) {
+    p[i - 1] && p[i - 1].next && p.push(p[i - 1].next)
+  }
+
+  ap = p.length ? p[p.length - 1].next : null
+  if (p.length === k) head = p[p.length - 1]
+  while (p.length === k) {
+    for (let i = p.length - 1; i > 0; i--) {
+      p[i].next = p[i - 1]
+    }
+    p[0].next = ap
+    if (bp) bp.next = p[p.length - 1]
+
+    bp = p[0]
+    p = []
+    if (ap) {
+      p.push(ap)
+      for (let i = 1; i < k; i++) {
+        p[i - 1] && p[i - 1].next && p.push(p[i - 1].next)
+      }
+      ap = p.length ? p[p.length - 1].next : null
+    }
+  }
+  return head
+}
+```
+
+# 26. Remove Duplicates from Sorted Array
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+  let start = 0,
+    end = nums.length - 1,
+    index = 0,
+    i = 0
+  debugger
+  while (i < nums.length) {
+    while (end - start > 1) {
+      let mid = Math.floor((end + start) / 2),
+        r = nums[mid]
+
+      if (r === nums[i]) {
+        start = mid
+      } else {
+        end = mid
+      }
+    }
+    if (end > start && nums[end] !== nums[start]) {
+      index++
+      nums[index] = nums[end]
+    }
+    start = i = Math.max(end, i + 1)
+    end = nums.length - 1
+  }
+  return index + 1
+}
+```
+
+# 27. Remove Element
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+  let index = 0
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      if (i !== index) {
+        nums[index] = nums[i]
+      }
+      index++
+    }
+  }
+  return index
+}
+```
+
+# 28. Implement strStr()
+
+```js
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  if (needle === '') return 0
+  let i = 0
+  debugger
+  while (i < haystack.length - needle.length + 1) {
+    if (haystack[i] === needle[0]) {
+      let r = true,
+        firstCharIndex
+      for (let j = 1; j < needle.length; j++) {
+        if (haystack[i + j] === needle[0]) {
+          firstCharIndex = firstCharIndex ? firstCharIndex : j
+        }
+        if (haystack[i + j] !== needle[j]) {
+          r = false
+          break
+        }
+      }
+      if (r) return i
+      i += firstCharIndex ? firstCharIndex : 1
+    } else {
+      i++
+    }
+  }
+  return -1
+}
+```
