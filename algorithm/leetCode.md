@@ -856,3 +856,87 @@ var strStr = function(haystack, needle) {
   return -1
 }
 ```
+
+# 29. Divide Two Integers
+
+```js
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
+var divide = function(dividend, divisor) {
+  let dividend0 = Math.abs(dividend),
+    divisor0 = Math.abs(divisor),
+    s = dividend0 + '',
+    d = 0,
+    r = 0
+  debugger
+  for (let i = 0; i < s.length; i++) {
+    let rr = 0,
+      mul = Math.pow(10, s.length - 1 - i)
+
+    d = d * 10 + +s[i]
+    while (d >= divisor0) {
+      d -= divisor0
+      rr++
+    }
+    r += rr * mul
+  }
+
+  if ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0)) return -r
+  else {
+    if (r === 2147483648) return r - 1
+    else return r
+  }
+}
+```
+
+#
+
+```js
+/**
+ * @param {string} s
+ * @param {string[]} words
+ * @return {number[]}
+ */
+var findSubstring = function(s, words) {
+  let i = 0,
+    len = words[0].length,
+    r = [],
+    cache = {}
+  debugger
+  for (let n of words) {
+    if (cache[n] === undefined) cache[n] = { num: 1 }
+    else cache[n].num++
+  }
+
+  while (i < s.length - len + 1) {
+    let first = s.slice(i, i + len)
+    if (cache[first] !== undefined) {
+      let all = true
+      cache[first].i = i
+      cache[first].numNow = 1
+      for (let j = 1; j < words.length; j++) {
+        let after = s.slice(i + len * j, i + len * j + len)
+        if (cache[after] !== undefined && cache[after].i !== i) {
+          cache[after].i = i
+          cache[after].numNow = 1
+        } else if (
+          cache[after] !== undefined &&
+          cache[after].i === i &&
+          cache[after].numNow < cache[after].num
+        ) {
+          cache[after].numNow++
+        } else {
+          all = false
+          break
+        }
+      }
+      if (all) r.push(i)
+    }
+    i++
+  }
+  return r
+}
+```
