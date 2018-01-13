@@ -448,7 +448,7 @@ var letterCombinations = function(digits) {
     6: ['m', 'n', 'o'],
     7: ['p', 'q', 'r', 's'],
     8: ['t', 'u', 'v'],
-    9: ['w', 'x', 'y', 'z'],
+    9: ['w', 'x', 'y', 'z']
   }
   if (digits.length === 0) return []
   if (digits.length === 1) return dict[digits]
@@ -638,8 +638,8 @@ var generateParenthesis = function(n) {
   let r = [
       {
         s: '(',
-        stack: ['('],
-      },
+        stack: ['(']
+      }
     ],
     len = 2 * n
 
@@ -649,23 +649,23 @@ var generateParenthesis = function(n) {
       if (n.stack.length === 0) {
         newr.push({
           s: n.s + '(',
-          stack: ['('],
+          stack: ['(']
         })
       } else if (len - i - n.stack.length < 2) {
         n.stack.pop()
         newr.push({
           s: n.s + ')',
-          stack: n.stack,
+          stack: n.stack
         })
       } else {
         newr.push({
           s: n.s + '(',
-          stack: n.stack.concat(['(']),
+          stack: n.stack.concat(['('])
         })
         n.stack.pop()
         newr.push({
           s: n.s + ')',
-          stack: n.stack,
+          stack: n.stack
         })
       }
     }
@@ -892,7 +892,7 @@ var divide = function(dividend, divisor) {
 }
 ```
 
-#
+# 30. Substring with Concatenation of All Words
 
 ```js
 /**
@@ -904,39 +904,95 @@ var findSubstring = function(s, words) {
   let i = 0,
     len = words[0].length,
     r = [],
-    cache = {}
+    cache = {},
+    cacheLen = 0
   debugger
   for (let n of words) {
     if (cache[n] === undefined) cache[n] = { num: 1 }
     else cache[n].num++
   }
+  cacheLen = Object.keys(cache).length
 
   while (i < s.length - len + 1) {
     let first = s.slice(i, i + len)
     if (cache[first] !== undefined) {
-      let all = true
-      cache[first].i = i
-      cache[first].numNow = 1
-      for (let j = 1; j < words.length; j++) {
-        let after = s.slice(i + len * j, i + len * j + len)
-        if (cache[after] !== undefined && cache[after].i !== i) {
-          cache[after].i = i
-          cache[after].numNow = 1
-        } else if (
-          cache[after] !== undefined &&
-          cache[after].i === i &&
-          cache[after].numNow < cache[after].num
+      if (cacheLen === 1) {
+        if (
+          s.slice(i + len, i + words.length * first.length) ===
+          first.repeat(words.length - 1)
         ) {
-          cache[after].numNow++
+          r.push(i)
         } else {
-          all = false
           break
         }
+      } else {
+        let all = true
+        cache[first].i = i
+        cache[first].numNow = 1
+        for (let j = 1; j < words.length; j++) {
+          let after = s.slice(i + len * j, i + len * j + len)
+          if (cache[after] !== undefined && cache[after].i !== i) {
+            cache[after].i = i
+            cache[after].numNow = 1
+          } else if (
+            cache[after] !== undefined &&
+            cache[after].i === i &&
+            cache[after].numNow < cache[after].num
+          ) {
+            cache[after].numNow++
+          } else {
+            all = false
+            break
+          }
+        }
+        if (all) r.push(i)
       }
-      if (all) r.push(i)
     }
     i++
   }
   return r
+}
+```
+
+# 31. Next Permutation
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var nextPermutation = function(nums) {
+  if (nums.length < 2) return
+  debugger
+  let notEdit = true
+  for (let i = nums.length - 1; i > 0; i--) {
+    if (nums[i] > nums[i - 1]) {
+      let tmp = nums[i - 1]
+      nums[i - 1] = nums[i]
+      nums[i] = tmp
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[j] < nums[i - 1] && nums[j] > tmp) {
+          let tmp1 = nums[i - 1]
+          nums[i - 1] = nums[j]
+          nums[j] = tmp1
+        }
+      }
+
+      for (let j = i; j < nums.length - 1; j++) {
+        for (let k = j + 1; k < nums.length; k++) {
+          if (nums[j] > nums[k]) {
+            let tmp = nums[k]
+            nums[k] = nums[j]
+            nums[j] = tmp
+          }
+        }
+      }
+      notEdit = false
+      break
+    }
+  }
+  if (notEdit) {
+    nums.sort((a, b) => a - b)
+  }
 }
 ```
