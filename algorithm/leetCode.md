@@ -996,3 +996,47 @@ var nextPermutation = function(nums) {
   }
 }
 ```
+
+# 32. Longest Valid Parentheses
+
+```js
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var longestValidParentheses = function(s) {
+  let c = [],
+    i = 0,
+    len = 0,
+    success = []
+
+  while (i < s.length) {
+    if (s[i] === '(') {
+      c.push(i)
+    } else if (c.length > 0) {
+      let left = c.pop(),
+        right = i,
+        isAdded = false
+
+      for (let n of success) {
+        if (n[0] <= left && n[1] >= right) {
+          isAdded = true
+          break
+        }
+        if (n[1] === left - 1) {
+          n[1] = right
+          len = Math.max(len, n[1] - n[0] + 1)
+          isAdded = true
+          break
+        }
+      }
+      if (!isAdded) {
+        success.push([left, right])
+        len = Math.max(len, right - left + 1)
+      }
+    }
+    i++
+  }
+  return len
+}
+```

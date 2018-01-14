@@ -73,6 +73,10 @@ backend ss-out
 	server server1 111.112.119.111:11111 maxconn 48
 ```
 
+haproxy优化
+
+https://blog.codeship.com/performance-tuning-haproxy/https://blog.codeship.com/performance-tuning-haproxy/
+
 # ss具体安装
 
 下面的命令，需要一行一行的执行，每输入一行命令，回车执行，如果没有报错，即为执行成功，出现确认提示的时候，输入 y 后，回车即可（每行命令可以复制后在putty里右键粘贴，回车执行）
