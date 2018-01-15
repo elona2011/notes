@@ -448,7 +448,7 @@ var letterCombinations = function(digits) {
     6: ['m', 'n', 'o'],
     7: ['p', 'q', 'r', 's'],
     8: ['t', 'u', 'v'],
-    9: ['w', 'x', 'y', 'z']
+    9: ['w', 'x', 'y', 'z'],
   }
   if (digits.length === 0) return []
   if (digits.length === 1) return dict[digits]
@@ -638,8 +638,8 @@ var generateParenthesis = function(n) {
   let r = [
       {
         s: '(',
-        stack: ['(']
-      }
+        stack: ['('],
+      },
     ],
     len = 2 * n
 
@@ -649,23 +649,23 @@ var generateParenthesis = function(n) {
       if (n.stack.length === 0) {
         newr.push({
           s: n.s + '(',
-          stack: ['(']
+          stack: ['('],
         })
       } else if (len - i - n.stack.length < 2) {
         n.stack.pop()
         newr.push({
           s: n.s + ')',
-          stack: n.stack
+          stack: n.stack,
         })
       } else {
         newr.push({
           s: n.s + '(',
-          stack: n.stack.concat(['('])
+          stack: n.stack.concat(['(']),
         })
         n.stack.pop()
         newr.push({
           s: n.s + ')',
-          stack: n.stack
+          stack: n.stack,
         })
       }
     }
@@ -1038,5 +1038,38 @@ var longestValidParentheses = function(s) {
     i++
   }
   return len
+}
+```
+
+# 33. Search in Rotated Sorted Array
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function(nums, target) {
+  debugger
+  if (nums.length === 0) return -1
+  if (target === nums[0]) return 0
+  else if (target > nums[0]) {
+    for (let i = 1; i < nums.length; i++) {
+      if (nums[i] === target) {
+        return i
+      } else if (nums[i] < nums[i - 1]) {
+        return -1
+      }
+    }
+  } else if (target === nums[nums.length - 1]) return nums.length - 1
+  else {
+    for (let i = nums.length - 2; i > 0; i--) {
+      if (nums[i] === target) return i
+      else if (nums[i] > nums[i + 1]) {
+        return -1
+      }
+    }
+  }
+  return -1
 }
 ```
