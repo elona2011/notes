@@ -1073,3 +1073,262 @@ var search = function(nums, target) {
   return -1
 }
 ```
+
+# 34. Search for a Range
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(nums, target) {
+  if (nums.length === 0 || nums[0] > target || nums[nums.length - 1] < target)
+    return [-1, -1]
+  debugger
+  let before = -1,
+    after = -1
+  if (nums[0] !== target) {
+    let i = 1,
+      j = nums.length - 1
+    while (1) {
+      if (i >= j - 1) {
+        if (nums[i] === target && nums[i - 1] < target) {
+          before = i
+        }
+        if (nums[j] === target && nums[j - 1] < target) {
+          before = j
+        }
+        break
+      }
+      if (nums[i] === target && nums[i - 1] < target) {
+        before = i
+        break
+      } else {
+        let mid = Math.floor((i + j) / 2),
+          midValue = nums[mid]
+
+        if (midValue < target) {
+          i = mid
+        } else {
+          j = mid
+        }
+      }
+    }
+  } else {
+    before = 0
+  }
+  if (nums[nums.length - 1] !== target) {
+    let i = before,
+      j = nums.length - 2
+    while (1) {
+      if (i >= j - 1) {
+        if (nums[j] === target && nums[j + 1] > target) {
+          after = j
+        }
+        if (nums[i] === target && nums[i + 1] > target) {
+          after = i
+        }
+        break
+      }
+      if (nums[j] === target && nums[j + 1] > target) {
+        after = j
+        break
+      } else {
+        let mid = Math.floor((i + j) / 2),
+          midValue = nums[mid]
+
+        if (midValue > target) {
+          j = mid
+        } else {
+          i = mid
+        }
+      }
+    }
+  } else {
+    after = nums.length - 1
+  }
+  return [before, after]
+}
+```
+
+# 35. Search Insert Position
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+  if (nums[0] >= target) return 0
+  if (nums[nums.length - 1] < target) return nums.length
+
+  let i = 0,
+    j = nums.length - 1,
+    mid = Math.floor((i + j) / 2)
+
+  while (mid !== i && mid !== j) {
+    if (nums[mid] > target) {
+      j = mid
+    } else if (nums[mid] < target) {
+      i = mid
+    } else {
+      return mid
+    }
+    mid = Math.floor((i + j) / 2)
+  }
+  return j
+}
+```
+
+# 36. Valid Sudoku
+
+未填满的也需要验证单个数字是否出现两次及以上
+
+```js
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
+var isValidSudoku = function(board) {
+  for (let n of board) {
+    let hash = {}
+    for (let num of n) {
+      if (num === '.') {
+        continue
+      } else if (hash[num] === undefined) {
+        hash[num] = 1
+      } else {
+        return false
+      }
+    }
+  }
+
+  for (let i = 0; i < 9; i++) {
+    let hash = {}
+    for (let n of board) {
+      if (n[i] === '.') {
+        continue
+      } else if (hash[n[i]] === undefined) {
+        hash[n[i]] = 1
+      } else {
+        return false
+      }
+    }
+  }
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      let hash = {}
+      matrix: for (let k = i * 3; k < i * 3 + 3; k++) {
+        for (let l = j * 3; l < j * 3 + 3; l++) {
+          if (board[k][l] === '.') {
+            continue
+          } else if (hash[board[k][l]] === undefined) {
+            hash[board[k][l]] = 1
+          } else {
+            return false
+          }
+        }
+      }
+    }
+  }
+  return true
+}
+```
+
+#
+
+```js
+/**
+ * @param {character[][]} board
+ * @return {void} Do not return anything, modify board in-place instead.
+ */
+var solveSudoku = function(board) {
+  debugger
+  let poss = {},
+    lastDotNum = 0,
+    firstEqual = true,
+    possOrigin = {},
+    mock = [],
+    correctBoard = []
+
+  while (1) {
+    let dotNum = 0
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        if (board[i][j] === '.') {
+          dotNum++
+          let p = i + '' + j
+          poss[p] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+          poss[p] = poss[p].filter(
+            n => board[i].find(e => e === n) === undefined
+          )
+          poss[p] = poss[p].filter(
+            n => board.map(e => e[j]).find(e => e === n) === undefined
+          )
+          let rows = board.filter((n, k) => {
+            if (i < 3) {
+              return k < 3
+            } else if (i < 6) {
+              return k > 2 && k < 6
+            } else {
+              return k >= 6
+            }
+          })
+          for (let i = 0; i < 3; i++) {
+            rows[i] = rows[i].filter((n, k) => {
+              if (j < 3) {
+                return k < 3
+              } else if (j < 6) {
+                return k > 2 && k < 6
+              } else {
+                return k >= 6
+              }
+            })
+          }
+          let rect = rows.reduce((a, b) => a.concat(b))
+          poss[p] = poss[p].filter(n => rect.find(e => e === n) === undefined)
+          if (poss[p].length === 1) {
+            board[i][j] = poss[p][0]
+            delete poss[p]
+          } else if (poss[p].length === 0) {
+          }
+        }
+      }
+    }
+    if (lastDotNum === dotNum) {
+      if (firstEqual) {
+        firstEqual = false
+        for (let n of board) {
+          let row = []
+          for (let e of n) {
+            row.push(e)
+          }
+          correctBoard.push(row)
+        }
+        for (let i = 0; i < 9; i++) {
+          for (let j = 0; j < 9; j++) {}
+        }
+        Object.assign(possOrigin, poss)
+      }
+      top: for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+          if (board[i][j] === '.') {
+            let p = i + '' + j
+            mock.push(p)
+            board[i][j] = poss[p][0]
+            delete poss[p]
+            break top
+          }
+        }
+      }
+      debugger
+    } else {
+      lastDotNum = dotNum
+    }
+    if (!dotNum) break
+  }
+}
+```
