@@ -1,3 +1,11 @@
+JSFuck
+
+https://en.wikipedia.org/wiki/JSFuck
+
+http://jaq.alibaba.com/community/art/show?&articleid=503
+
+# Array
+
 分析极验代码时发现的加密数组：该数组在console里查看时展示为无限循环的数组，实际上只包含39个不同的值，通过以下output数组可以简化该无限数组
 
 ```js
