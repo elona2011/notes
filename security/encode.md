@@ -89,6 +89,4 @@ cache = cache.replace(/\[(\d+)]\[(\d+)](\[(\d+)])?(\[(\d+)])?/g, (v, m1, m2, m3,
     return `[${output[m1][m2]}]`
   }
 })
-
-fs.writeFileSync(`${process.cwd()}/geeguard.1.3.1_format.js`, cache)
 ```
