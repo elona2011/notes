@@ -9,3 +9,7 @@ https://medium.com/@dupski/debug-typescript-in-vs-code-without-compiling-using-t
 # karma
 
 https://ariya.io/2015/09/javascript-testing-with-latest-firefox-and-chrome-on-appveyor
+
+# Selenium
+
+https://team.goodeggs.com/getting-started-with-selenium-webdriver-for-node-js-f262a00c52e1
