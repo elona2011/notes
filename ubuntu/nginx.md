@@ -43,7 +43,7 @@ upstream dip.cnsuning.com{
 }
 ```
 
-设置/persons走反向代理
+设置/persons 走反向代理
 
 ```
 location /persons {
@@ -57,7 +57,7 @@ location /persons {
 ```
 server{  
     resolver 127.0.1.1;  
-    resolver_timeout 30s;   
+    resolver_timeout 30s;
     listen 8000;  
     location / {  
         proxy_pass http://$http_host$request_uri;  
@@ -84,7 +84,23 @@ gzip_vary on;
 gzip_comp_level 6;
 gzip_proxied any;
 gzip_types text/plain text/html text/css application/json application/javascript application/x-javascript text/javascript text/xml application/xml application/rss+xml application/atom+xml application/rdf+xml;
-#it was gzip_buffers 16 8k; 
+#it was gzip_buffers 16 8k;
 gzip_buffers 128 4k; #my pagesize is 4
 gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 ```
+
+# inject content
+
+1 如果注入网站开启gzip，那么需要``proxy_set_header Accept-Encoding "";``
+2 使用sub_filter
+
+```
+location / {
+    sub_filter '</head>' 'aaa</head>';
+    sub_filter_once on;
+    proxy_set_header Accept-Encoding "";
+    proxy_pass http://aaa.example.com;
+}
+```
+
+https://stackoverflow.com/questions/19700871/how-to-inject-custom-content-via-nginx

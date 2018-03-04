@@ -5,3 +5,7 @@ https://journal.artfuldev.com/write-tests-for-typescript-projects-with-mocha-and
 # typescript
 
 https://medium.com/@dupski/debug-typescript-in-vs-code-without-compiling-using-ts-node-9d1f4f9a94a
+
+# karma
+
+https://ariya.io/2015/09/javascript-testing-with-latest-firefox-and-chrome-on-appveyor
