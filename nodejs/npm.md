@@ -1,3 +1,16 @@
+# package.json
+
+``npm run`` 运行在package.json的scripts字段里定义的命令
+
+windows下设置环境变量
+
+```json
+"scripts":{
+  "dev": "set NODE_ENV=dev&& tsc && rollup -c", //process.env.NODE_ENV.length === 3 不含空格
+  "prd": "set NODE_ENV=dev && tsc && rollup -c", //process.env.NODE_ENV.length === 4 包含空格
+}
+```
+
 # command
 
 ## registry
@@ -6,10 +19,6 @@
 npm config set registry "https://registry.npm.taobao.org"
 npm install express --registry=https://registry.npm.taobao.org
 ```
-
-## run
-
-``npm run`` 运行在package.json的scripts字段里定义的命令
 
 ## config
 

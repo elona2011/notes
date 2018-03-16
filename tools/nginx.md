@@ -1,3 +1,59 @@
+# forward proxy
+
+```
+location / {
+    resolver 8.8.8.8;
+    proxy_pass http://$http_host$uri$is_args$args;
+}
+```
+
+https://ef.gy/using-nginx-as-a-proxy-server
+
+# to another http proxy
+
+proxy_pass转发时，http头部request url里会删除原url里的hostname，可通过rewrite恢复
+
+```
+location / {
+    rewrite            ^(.*)$   "://$http_host$uri";
+    rewrite            ^(.*)$   "http$uri" break;
+    proxy_pass http://xx.xx.xx.xx:xx/;
+    proxy_set_header    Host   $host;
+    proxy_read_timeout 1800;
+    proxy_connect_timeout 1800;
+}
+```
+
+https://stackoverflow.com/questions/5834025/how-to-preserve-request-url-with-nginx-proxy-pass
+
+# inject content
+
+1 如果注入网站开启gzip，那么需要``proxy_set_header Accept-Encoding "";``
+2 使用sub_filter
+
+```
+location / {
+    sub_filter '</head>' 'aaa</head>';
+    sub_filter_once on;
+    proxy_set_header Accept-Encoding "";
+    proxy_pass http://aaa.example.com;
+}
+```
+
+https://stackoverflow.com/questions/19700871/how-to-inject-custom-content-via-nginx
+
+
+
+# serving single file
+
+```
+location /static/js/slide.7.1.7.js {
+    alias C:\\Users\\16092927\\Documents\\test\\gee\\slide.js;
+}
+```
+
+https://serverfault.com/questions/278351/nginx-root-versus-alias-for-serving-single-files
+
 # Install
 
 ```
@@ -52,28 +108,6 @@ location /persons {
 }
 ```
 
-# 正向代理
-
-```
-server{  
-    resolver 127.0.1.1;  
-    resolver_timeout 30s;
-    listen 8000;  
-    location / {  
-        proxy_pass http://$http_host$request_uri;  
-        proxy_set_header Host $http_host;  
-        proxy_buffers 256 4k;  
-        proxy_max_temp_file_size 0;  
-        proxy_connect_timeout 30;  
-        proxy_cache_valid 200 302 10m;  
-        proxy_cache_valid 301 1h;  
-        proxy_cache_valid any 1m;  
-    }  
-}  
-```
-
-http://blog.csdn.net/newborn2012/article/details/24248961
-
 # gzip
 
 ```
@@ -89,18 +123,4 @@ gzip_buffers 128 4k; #my pagesize is 4
 gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 ```
 
-# inject content
 
-1 如果注入网站开启gzip，那么需要``proxy_set_header Accept-Encoding "";``
-2 使用sub_filter
-
-```
-location / {
-    sub_filter '</head>' 'aaa</head>';
-    sub_filter_once on;
-    proxy_set_header Accept-Encoding "";
-    proxy_pass http://aaa.example.com;
-}
-```
-
-https://stackoverflow.com/questions/19700871/how-to-inject-custom-content-via-nginx

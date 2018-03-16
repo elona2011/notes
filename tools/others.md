@@ -1,3 +1,35 @@
+# 修改默认启动项
+
+在/boot/grub/grub.cfg中找出windows项，如``menuentry "Windows Vista (loader) (on /dev/sdc1)"``
+
+```
+# vi /etc/default/grub
+```
+
+修改GRUB_DEFAULT=0
+
+```
+GRUB_DEFAULT="Windows 7 (loader) (on /dev/sda1)"
+```
+
+更新Grub
+
+```
+# update-grub
+```
+
+# vimium
+
+Chrome快捷键插件，类VIM键位
+
+```
+gi //焦点移动到第一个input框，搜索页面很好用
+```
+
+https://github.com/philc/vimium/blob/master/README.md
+
+按v,V可进入Visual Mode，可以选择文本，再按y键复制。Visual Mode下按c可调整文本选择的起始位置
+
 # Atom
 
 ## Keybinding
