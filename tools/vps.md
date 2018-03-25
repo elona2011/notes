@@ -151,3 +151,7 @@ reboot
 ```
 
 此时，你的VPS重新启动，服务端已经完全配置完毕，putty会弹出一个连接已断开的提示框，关闭即可(不是报错)。
+
+# chrome
+
+首次使用chrome需设置系统proxy，对于ss，只要手动设置socks代理，不要设置http/https代理，否则会连不上
