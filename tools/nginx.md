@@ -42,17 +42,33 @@ location / {
 
 https://stackoverflow.com/questions/19700871/how-to-inject-custom-content-via-nginx
 
-
-
 # serving single file
 
 ```
-location /static/js/slide.7.1.7.js {
-    alias C:\\Users\\16092927\\Documents\\test\\gee\\slide.js;
+location /static/js/slide.js {
+    alias C:\\Users\\username\\Documents\\test\\gee\\slide.js;
+}
+```
+
+# serving directory
+
+```
+location /static/ {
+    root C:\\Users\\username\\Documents\\test\\recaptcha\\demo\\;
 }
 ```
 
 https://serverfault.com/questions/278351/nginx-root-versus-alias-for-serving-single-files
+
+# regexp
+
+需要有modifier才生效
+
+```
+location ~ \/slide\.7\.\d+\.\d+\.js {
+    alias C:\\Users\\username\\Documents\\test\\deobfuscator\\demo\\slide.js;
+}
+```
 
 # Install
 
@@ -67,6 +83,13 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-
 
 ```bash
 sudo systemctl restart nginx
+```
+
+windows:
+
+```
+nginx -s stop
+nginx -s reload
 ```
 
 # 配置
