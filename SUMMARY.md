@@ -33,7 +33,6 @@
     * [others](/FEbases/libs/others.md)
 * [Nodejs](/nodejs/node-install.md)
     * [log](/nodejs/log.md)
-    * [note](/nodejs/note.md)
     * [npm](/nodejs/npm.md)
     * [pm2](/nodejs/pm2.md)
     * [thinkjs](/nodejs/thinkjs.md)
