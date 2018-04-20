@@ -29,3 +29,7 @@ declare module "*.png" {
   export = value;
 }
 ```
+
+# why i not use typescript
+
+https://www.reaktor.com/blog/fear-trust-and-purescript/

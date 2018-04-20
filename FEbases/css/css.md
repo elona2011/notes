@@ -64,3 +64,11 @@ p {font-size:14px; font-size:.875rem;}
 # box-shadow可以绘制像素级图案
 
 https://journal.helabs.com/pocket-guide-to-css-only-drawings-and-animations-781470436ecc#.ydkkx0dmy
+
+# calc
+
+```css
+width: calc(100% - 80px);
+```
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/calc

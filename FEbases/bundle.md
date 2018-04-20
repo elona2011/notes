@@ -15,3 +15,7 @@ https://stackoverflow.com/questions/43219030/what-is-flat-bundling-and-why-is-ro
 rollup对于一些较大的commonjs项目的打包可能会有问题，只能直接引用
 
 https://github.com/rollup/rollup-plugin-commonjs/issues/215
+
+# rollup-plugin-commonjs and tree shaking
+
+~~cjs包使用``import * as main ..``可以支持tree shaking。它将main里的方法直接放置于rollup的iife下面，使用独立变量引用，未使用的变量会被tree shaking。而``import main ..``则在iife下放置了main对象，main对象的属性不会做tree shaking~~

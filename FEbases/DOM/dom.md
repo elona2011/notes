@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 ```
 
+# element position
+
+```js
+element.getBoundingClientRect()
+```
+
+https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+
 # TreeWalker
 
 ```js

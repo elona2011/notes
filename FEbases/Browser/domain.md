@@ -19,3 +19,9 @@ Access-Control-Allow-Origin: "*" //表示该网站支持跨域请求
 # JSONP
 
 http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html
+
+# image
+
+get image data in javascript
+
+https://stackoverflow.com/questions/934012/get-image-data-in-javascript/42916772#42916772
