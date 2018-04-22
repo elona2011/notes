@@ -1,7 +1,0 @@
-# symmetice vs asymmetric
-
-http://www.jscape.com/blog/bid/84422/Symmetric-vs-Asymmetric-Encryption
-
-# TLS
-
-https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake

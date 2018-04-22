@@ -146,4 +146,14 @@ gzip_buffers 128 4k; #my pagesize is 4
 gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 ```
 
+# https
 
+https://certbot.eff.org/#ubuntuxenial-nginx
+
+# http2
+
+nginx sites-available default
+
+```
+listen 443 ssl http2;
+```
