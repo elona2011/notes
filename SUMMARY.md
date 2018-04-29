@@ -33,7 +33,7 @@
     * [jquery](/libs/jquery.md)
     * [react](/libs/react.md)
     * [others](/libs/others.md)
-* [Nodejs](/nodejs/node-install.md)
+* [Nodejs](/nodejs/base.md)
     * [log](/nodejs/log.md)
     * [npm](/nodejs/npm.md)
     * [pm2](/nodejs/pm2.md)

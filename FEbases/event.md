@@ -8,6 +8,12 @@ https://pawelgrzybek.com/whats-the-deal-with-the-pointer-events-in-javascript/
 
 https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent
 
+# touch-action
+
+css的touch-action可以设置浏览器对pointermove事件的处理，After a short period of time, the (mobile) browser will claim the pointermove event for "native" behavior like panning the page.
+
+https://stackoverflow.com/questions/48124372/pointermove-event-not-working-with-touch-why-not
+
 # DOMContentLoaded
 
 在html和静态js执行完成后，触发。与css、image等无关

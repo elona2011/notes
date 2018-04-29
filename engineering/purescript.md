@@ -23,6 +23,12 @@ class Stream stream element | stream -> element where
   uncons :: stream -> Maybe { head :: element, tail :: stream }
 ```
 
+# type vs data
+
+type定义了一个同名类型，使用上完全等价，最终编译后的代码不存在这个type
+
+data定义了一个全新的类型
+
 # ADT
 
 ADT定义了数据类型，当参数定义为该ADT后，就需要实现定义过的所有类型。因为List的ADT为``Data List a = Nil | Cons a (List a)``
@@ -31,4 +37,20 @@ ADT定义了数据类型，当参数定义为该ADT后，就需要实现定义�
 sum :: List Int -> Int
 sum Nil = 0
 sum (Cons x xs) = x + sum xs
+```
+
+# row polymorphism
+
+可理解为任意多个参数，``{ first :: String, last :: String | r }``为``Record (firstName :: String, lastName :: String | r)``的语法糖 
+
+```
+showPerson :: forall r. { first :: String, last :: String | r } -> String
+showPerson { first: x, last: y } = y <> ", " <> x
+```
+
+``#``说明参数顺序是可变的，如同Record中的属性
+
+```
+> :kind Record
+# Type -> Type
 ```
