@@ -2,9 +2,9 @@
 
 * [Algorithm](/algorithm/leetCode.md)
     * [LeetCode](/algorithm/leetCode.md)
+* [purescript](/purescript/purescript.md)
 * [Engineering](/engineering/bundle.md)
     * [bundle](/engineering/bundle.md)
-    * [purescript](/engineering/purescript.md)
     * [typescript](/engineering/typescript.md)
     * [test](/engineering/test.md)
 * [Javascript](/FEbases/bases.md)
