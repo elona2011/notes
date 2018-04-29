@@ -12,6 +12,15 @@ https://help.github.com/articles/caching-your-github-password-in-git/
 
 https://help.github.com/articles/generating-ssh-keys/
 
+3 del ssh key
+
+use git bash in windows
+
+```
+ls -al ~/.ssh
+rm -f ~/.ssh/id_rsa*
+```
+
 # gitignore
 
 ```sh
