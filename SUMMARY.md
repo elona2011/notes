@@ -3,6 +3,7 @@
 * [Algorithm](/algorithm/leetCode.md)
     * [LeetCode](/algorithm/leetCode.md)
 * [Purescript](/purescript/purescript.md)
+    * [record](/purescript/record.md)
 * [Engineering](/engineering/bundle.md)
     * [bundle](/engineering/bundle.md)
     * [typescript](/engineering/typescript.md)
