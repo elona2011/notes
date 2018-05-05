@@ -32,4 +32,6 @@ declare module "*.png" {
 
 # why i not use typescript
 
+https://www.reaktor.com/blog/fear-trust-and-javascript/
+
 https://www.reaktor.com/blog/fear-trust-and-purescript/
