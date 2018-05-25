@@ -1,3 +1,5 @@
+https://github.com/purescript/documentation/blob/master/language/Types.md
+
 # type vs data
 
 type定义了一个同名类型，使用上完全等价，最终编译后的代码不存在这个type
