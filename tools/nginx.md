@@ -116,7 +116,7 @@ server {
 # 反向代理
 
 ```
-upstream dip.cnsuning.com{
+upstream dip.cng.com{
     server 10.37.65.66:8360 weight=1;
     server 10.37.65.68:8360 weight=1;
 }
@@ -126,7 +126,7 @@ upstream dip.cnsuning.com{
 
 ```
 location /persons {
-    proxy_pass http://dip.cnsuning.com;
+    proxy_pass http://p.cng.com;
     proxy_redirect default;
 }
 ```
