@@ -16,11 +16,11 @@ declare module '*.vue' {
   export default Vue
 }
 
-declare module '@suning/uxcool/es/index' {
+declare module 'uxcool/es/index' {
 
 }
 
-declare module '@suning/v-pagination' {
+declare module 'v-pagination' {
 
 }
 
