@@ -17,3 +17,6 @@ build :: forall r1 r2. Builder (Record r1) (Record r2) -> Record r1 -> Record r2
 build (Builder b) r1 = b (copyRecord r1)
 ```
 
+# unsafeCoerce
+
+强制类型转换
