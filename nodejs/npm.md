@@ -21,6 +21,12 @@ ubuntu:
 }
 ```
 
+# yarn
+
+```
+yarn global add eslint
+```
+
 # command
 
 ## registry

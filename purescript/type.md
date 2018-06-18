@@ -22,3 +22,7 @@ build (Builder b) r1 = b (copyRecord r1)
 # Maybe
 
 https://github.com/purescript/documentation/blob/master/guides/The-Partial-type-class.md
+
+# unsafeCoerce
+
+强制类型转换
