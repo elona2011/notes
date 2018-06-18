@@ -50,3 +50,17 @@ http://askubuntu.com/questions/149971/how-do-you-remap-a-key-to-the-caps-lock-ke
 # bandwidth
 
 http://askubuntu.com/questions/20872/how-do-i-limit-internet-bandwidth
+
+# Grub
+
+修改默认启动项
+
+```
+# sudo vim /etc/default/grub
+
+GRUB_DEFAULT=0 //改为4
+
+# sudo update-grub
+```
+
+https://jingyan.baidu.com/article/f71d60379e16021ab641d1ab.html

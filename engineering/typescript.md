@@ -30,6 +30,15 @@ declare module "*.png" {
 }
 ```
 
+# npm script
+
+```js
+{
+  "test": "set TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} && npm run mocha",
+  "mocha": "mocha -r ts-node/register test/**/*.ts",
+}
+```
+
 # why i not use typescript
 
 https://www.reaktor.com/blog/fear-trust-and-javascript/

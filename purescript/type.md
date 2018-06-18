@@ -19,3 +19,6 @@ build :: forall r1 r2. Builder (Record r1) (Record r2) -> Record r1 -> Record r2
 build (Builder b) r1 = b (copyRecord r1)
 ```
 
+# Maybe
+
+https://github.com/purescript/documentation/blob/master/guides/The-Partial-type-class.md

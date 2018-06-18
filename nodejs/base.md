@@ -1,3 +1,13 @@
+# NODE_ENV
+
+```json
+"scripts": {
+    "start": "npm run dev",
+    "dev": "set NODE_ENV=dev&& node script/build.js", // for windows
+    "de": "NODE_ENV=dev node script/build.js", // for Linux
+},
+```
+
 # path
 
 process.cwd() returns the directory from which you invoked the node command.
