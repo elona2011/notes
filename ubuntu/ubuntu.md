@@ -1,24 +1,32 @@
 # startup
 
 ```
-vi /etc/rc.local
+crontab -e
 
-#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-
-/usr/bin/sslocal -c /etc/shadowsocks/config.json
-exit 0
+@reboot sslocal -c /etc/shadowsocks/config.json
 ```
+
+https://unix.stackexchange.com/questions/416137/how-can-i-run-a-script-on-startup-on-ubuntu-server-17-10
+
+# desktop shortcut
+
+save to androidStudio.desktop
+
+```
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon=someicon
+Exec=sh /path/to/studio.sh
+Name=Android Studio
+```
+
+```
+cd ~/Desktop && chmod a+x androidStudio.desktop
+```
+
+https://askubuntu.com/questions/713401/create-a-desktop-shortcut-icon-for-studio-sh
 
 # keybinding
 
