@@ -25,3 +25,9 @@ sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
 ```
 
 https://askubuntu.com/questions/342202/failed-to-load-module-canberra-gtk-module-but-already-installed
+
+# grant current user access to /dev/kvm
+
+```
+sudo chown username -R /dev/kvm
+```
