@@ -1,8 +1,4 @@
-# package.json
-
-``npm run`` 运行在package.json的scripts字段里定义的命令
-
-## 环境变量
+# 环境变量
 
 window:
 
@@ -26,6 +22,10 @@ ubuntu:
 ```
 yarn global add eslint
 ```
+
+# npm link
+
+http://justjs.com/posts/npm-link-developing-your-own-npm-modules-without-tears
 
 # command
 

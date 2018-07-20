@@ -1,7 +1,7 @@
 HTTP Proxy中Host name设置为mirrors.neusoft.edu.cn
 
 第一次安装Android studio时候弹出unable to access android sdk add-on list原因是你电脑没有SDK而且你下载的android studio又是不带SDK的； 
-解决方法：在自己安装的目录下找到：bin\idea.properties打开这个文件末尾添加一行disable.android.first.run=true
+解决方法：在Android Studio安装目录下/bin找到：bin\idea.properties打开这个文件末尾添加一行disable.android.first.run=true
 
 # java install
 
