@@ -30,3 +30,8 @@ https://docs.telerik.com/fiddler/KnowledgeBase/FiddlerScript/ModifyRequestOrResp
 
 https://gist.github.com/fhfaa/4501be75121cae2da45f
 
+# mac
+
+```
+mono --arch=32 Fiddler.exe
+```
