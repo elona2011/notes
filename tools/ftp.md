@@ -1,8 +1,20 @@
 # commandline
 
 ```
-put [filename]
+ftp xx.xx.xx.xx 8080
+pass // if found `500 Illegal PORT command, switch to passive mode
+ls
 ```
+
+https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
+
+# wget
+
+```
+wget -m --user="user@login" --password="Pa$$wo|^D" ftp://server.com/
+```
+
+https://stackoverflow.com/questions/113886/how-to-recursively-download-a-folder-via-ftp-on-linux
 
 # install & restart
 

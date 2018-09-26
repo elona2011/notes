@@ -28,8 +28,8 @@ sudo /etc/init.d/transmission-daemon start
 ```
 "rpc-username": "你的用户名"　//登录者用户名
 "rpc-password": "你的密码"　//用户密码
-"download-dir": "/home/bt/downloads"　//下载完成储存的位置
-"incomplete-dir": "/home/bt/downloads"　//未下载完成储存的位置
+"download-dir": "/home/bt/downloads"　//下载完成储存的位置,可以不改
+"incomplete-dir": "/home/bt/downloads"　//未下载完成储存的位置,可以不改
 "rpc-whitelist-enabled": false　//启用IP认证模式
 "rpc-authentication-required": true　//启用使用者认证方式 
 ```
