@@ -16,16 +16,9 @@ wget -m --user="user@login" --password="Pa$$wo|^D" ftp://server.com/
 
 https://stackoverflow.com/questions/113886/how-to-recursively-download-a-folder-via-ftp-on-linux
 
-# install & restart
+# vsftpd usage
 
-```
-yum -y update
-yum -y install vsftpd
-vim /etc/vsftpd/vsftpd.conf
-service vsftpd restart
-```
-
-https://www.liquidweb.com/kb/how-to-install-and-configure-vsftpd-on-centos-7/
+https://blog.csdn.net/soslinken/article/details/79304076
 
 # trouble shooting
 
