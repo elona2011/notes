@@ -1,3 +1,9 @@
+# tutorial
+
+https://people.cs.vt.edu/~davisjam/node-debugging-cpp-addons/
+
+# g++
+
 compiling with ``-g``
 
 ```
