@@ -89,6 +89,17 @@ http://stackoverflow.com/questions/23749886/git-unable-to-resolve-references-whe
 
 # git proxy
 
+## linux
+
+add the following to the file ``~/.ssh/config``
+
+```
+Host github.com
+        ProxyCommand nc -X 5 -x localhost:1080 %h %p
+```
+
+## windows
+
 最近ssh可能被封，导致git客户端无论如何也连不上。尝试许久后，在win10找到如下方法：[Using SSH over the HTTPS port](https://help.github.com/articles/using-ssh-over-the-https-port/)
 
 该方法实测可用，但实际使用中传输速度非常慢1k/s，可采用ssh走shadowsocks的方法，配置好后可达到代理的最大网速。
