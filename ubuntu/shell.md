@@ -1,3 +1,9 @@
+# bg
+
+```
+nohup <command> <args> ><filename> 2>&1 &
+```
+
 # adduser
 
 新建一个用户
