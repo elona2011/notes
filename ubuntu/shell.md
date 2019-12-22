@@ -1,3 +1,7 @@
+```
+$ scp -r * remoteuser@remoteserver:/remote/folder/
+```
+
 # adduser
 
 新建一个用户
