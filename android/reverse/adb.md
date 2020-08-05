@@ -1,5 +1,7 @@
 http://adbshell.com/
 
+You can find the adb tool in android sdk/platform-tools.
+
 ```
 adb forward tcp:23946 tcp:23946
 
