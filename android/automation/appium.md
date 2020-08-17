@@ -1,0 +1,1 @@
+https://testautomationu.applitools.com/appium-javascript-tutorial/chapter5.html
