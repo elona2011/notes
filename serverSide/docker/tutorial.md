@@ -22,4 +22,8 @@ docker run -d `
     -e MYSQL_ROOT_PASSWORD=secret `
     -e MYSQL_DATABASE=todos `
     mysql:5.7
+
+docker-compose run web python manage.py migrate
 ```
+
+https://docs.docker.com/compose/django/
