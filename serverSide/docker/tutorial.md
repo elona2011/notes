@@ -27,3 +27,15 @@ docker-compose run web python manage.py migrate
 ```
 
 https://docs.docker.com/compose/django/
+
+# 镜像 
+
+/etc/docker/daemon.json
+
+```
+{
+  "registry-mirrors": ["https://evzqes5m.mirror.aliyuncs.com"] 
+}
+```
+
+https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
