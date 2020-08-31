@@ -36,6 +36,8 @@ https://docs.docker.com/compose/django/
 {
   "registry-mirrors": ["https://evzqes5m.mirror.aliyuncs.com"] 
 }
+
+service docker restart
 ```
 
 https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
