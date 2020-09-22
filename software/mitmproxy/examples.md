@@ -19,3 +19,5 @@ def request(flow: http.HTTPFlow) -> None:
         )
 
 ```
+
+mitmproxy -s proxy.py
