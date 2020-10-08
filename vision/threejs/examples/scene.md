@@ -5,3 +5,9 @@ const scene = new THREE.Scene();
 // const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 ```
+
+# background
+
+```js
+scene.background = new THREE.Color(0xAAAAAA);
+```

@@ -20,3 +20,13 @@ function render(time) {
 }
 requestAnimationFrame(render);
 ```
+
+# setSize 关系清晰度
+
+```js
+const width = canvas.clientWidth;
+const height = canvas.clientHeight;
+renderer.setSize(width, height, false);
+```
+
+https://threejsfundamentals.org/threejs/lessons/threejs-responsive.html
