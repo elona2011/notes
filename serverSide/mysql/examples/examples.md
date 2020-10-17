@@ -1,6 +1,4 @@
-导入表
 
-mysql -u root -p PromotionDouyin < PromotionRealTime.sql
 
 显示type
 

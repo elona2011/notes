@@ -16,7 +16,7 @@ git branch -d branch1
 1 缓存本地
 
 ```
-git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
 ```
 
 https://help.github.com/articles/caching-your-github-password-in-git/
