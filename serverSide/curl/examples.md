@@ -1,0 +1,5 @@
+# Header
+
+```
+curl -H "cookie: SameSite=none; cna=3XcoF090BD8CATslfX361wOz; cookie2=1e279c2c8339fd45dc49c4e21eabe98d; hng=CN%7Czh-CN%7CCNY%7C156; t=0a166e22abe6c6fac7414e163356c091; _tb_token_=36633def89f9e; csg=7628ffce; lid=yamaki; __cn_logon__=false; ali_ab=14.17.22.33.1602488192378.4; h_keys="%u767e%u8d27"; UM_distinctid=1751bbd7e38bef-0933a297a53226-31697304-1aeaa0-1751bbd7e39b7a; taklid=514d5087469d4fafa53727a11aac197e; __wapcsf__=1; unb=24489144; ad_prefer="2020/10/22 10:06:13"; _m_h5_tk=e8e1547d42bb975a25716da101b3e2cc_1603688107291; _m_h5_tk_enc=acfe475cc1eca5744841827da506c09f; xlly_s=1; alicnweb=touch_tb_at%3D1603680548472; tfstk=cYSFBB0oh3f1P4K7kHtrR8nfNRddZp6hEcJX-a8Iu5cuzpThiAGJIHgJQLOYjef..; l=eBPVI6e4OKEPcV_jXOfwnurza77t_IRAguPzaNbMiOCP_R1p5c6FWZWyF2L9CnGVh6fJR379b1TgBeYBcIxvc_DKuTk1lgHmn; isg=BEFBuGLg-gYMIxYgFDjtLp-EUItbbrVgGrA_rKOWK8inimFc674JMQ6MbP7Mgk2Y" -H "referer: https://factory.1688.com/" https://widget.1688.com/front/getJsonComponent.json?callback=jQuery18307398819100468683_1603683249692
+```
