@@ -16,7 +16,7 @@ StandardError=syslog
 SyslogIdentifier=feigua-login
 #User=<alternate user>
 #Group=<alternate group>
-Environment=NODE_ENV=production PORT=1337
+#Environment=NODE_ENV=production PORT=1337
 
 [Install]
 WantedBy=multi-user.target
