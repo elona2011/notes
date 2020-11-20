@@ -17,24 +17,11 @@ ubuntu:
 }
 ```
 
-# yarn
-
-```
-yarn global add eslint
-```
-
 # npm link
 
 http://justjs.com/posts/npm-link-developing-your-own-npm-modules-without-tears
 
 # command
-
-## registry
-
-```
-npm config set registry "https://registry.npm.taobao.org"
-npm install express --registry=https://registry.npm.taobao.org
-```
 
 ## config
 
@@ -127,13 +114,3 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | b
 *二进制安装*
 
 http://www.cnblogs.com/dubaokun/p/3558848.html
-
-## ubuntu
-
-```
-sudo apt-get update
-sudo apt-get install curl
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
