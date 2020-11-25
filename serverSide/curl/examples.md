@@ -34,3 +34,9 @@ curl -v POST https://oa.m.tencent.com/mobile/parkourGame/api/api/game/end \
 -H "user-agent: Mozilla/5.0 (Linux; Android 10; BMH-AN10 Build/HUAWEIBMH-AN10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045409 Mobile Safari/537.36 MMWEBID/5706 MicroMessenger/7.0.20.1781(0x2700143B) Process/tools WeChat/arm64 NetType/WIFI Language/zh_CN ABI/arm64" \
 -H "x-requested-with: com.tencent.mm" \
 -d '{"meter":11000,"token":"oQG4t1M18k386FLCtovMGViy4C28","t":1605066173919,"sign":"5a69ab43ca4f958326978255091e9600e483033ee9d9df6332f30bf3f4274b34"}' 
+
+# files
+
+```
+curl -F 'files=@/Users/yanjie/a.jpg' http://localhost:3000/parse/img
+```
