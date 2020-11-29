@@ -1,0 +1,32 @@
+```
+version: '3.8'
+
+services:
+    db:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=students
+            - TZ=Asia/Shanghai
+        volumes:
+            - ./conf/mysqlconf:/etc/mysql/conf.d
+        ports:
+            - "33061:3306"
+    pupp:
+        build: .
+        command: bash -c "node /code/test.js"
+        volumes:
+            - .:/code
+        cap_add:
+            - SYS_ADMIN
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+        environment:
+            - MYSQL_HOST=db
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=123456
+            - MYSQL_DB=students
+            - TZ=Asia/Shanghai
+```
