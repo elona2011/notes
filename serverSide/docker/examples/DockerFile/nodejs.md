@@ -1,7 +1,5 @@
-FROM node:12-slim
+FROM node:12
 
 RUN npm i axios --registry=https://registry.npm.taobao.org
-
-VOLUME /code
 
 CMD ["node","/code/test.js"]
