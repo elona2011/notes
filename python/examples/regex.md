@@ -20,3 +20,8 @@ content = re.sub(re_GetNoticeIsUnread, b'', content)
 ```py
 test = re.sub(b"\x1b.*\x07", b'', test)
 ```
+
+# grouping
+
+r = re.search(r'appid1">([a-z0-9]+)<', str(res.content))
+appid = r.group(1)
