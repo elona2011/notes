@@ -1,0 +1,1 @@
+docker run -it --rm -v "$PWD":/code -w /code node:12 npm install --registry=https://registry.npm.taobao.org
