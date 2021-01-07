@@ -1,1 +1,1 @@
-UPDATE employees SET lastname = 'Smith' WHERE employeeid = 3;
+UPDATE employees SET lastname = 'Smith',bb='a' WHERE employeeid = 3;
