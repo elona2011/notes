@@ -1,0 +1,1 @@
+https://docs.alfresco.com/3.4/tasks/swap-space-lin.html
