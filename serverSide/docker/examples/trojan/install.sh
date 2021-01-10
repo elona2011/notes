@@ -1,11 +1,24 @@
-{
+#!/bin/sh
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot certonly --standalone -m arthuxx@gmail.com --agree-tos -n -d t..me
+mkdir trojan
+sudo cp /etc/letsencrypt/archive/t.yanjie.me/fullchain1.pem /home/ubuntu/trojan/fullchain.pem
+sudo cp /etc/letsencrypt/archive/t.yanjie.me/privkey1.pem /home/ubuntu/trojan/privkey.pem
+sudo snap install docker
+FILE=/home/ubuntu/trojan/config.json
+if [ ! -f "$FILE" ]; then
+touch trojan/config.json
+echo '{
     "run_type": "server",
     "local_addr": "0.0.0.0",
     "local_port": 443,
     "remote_addr": "127.0.0.1",
     "remote_port": 80,
     "password": [
-        "password1"
+        ""
     ],
     "log_level": 1,
     "ssl": {
@@ -47,4 +60,6 @@
         "cert": "",
         "ca": ""
     }
-}
+}' >> trojan/config.json
+fi
+sudo docker run -dt --name trojan -v /home/ubuntu/trojan:/config -p 443:443 trojangfw/trojan
