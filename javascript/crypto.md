@@ -1,3 +1,3 @@
 ```js
-require('crypto').createHash('md5').update('xxx').digest('hex').slice()
+require('crypto').createHash('md5').update('xxxttb').digest('hex').slice(-1)
 ```

@@ -8,6 +8,7 @@ mkdir trojan
 sudo cp /etc/letsencrypt/archive/t.yanjie.me/fullchain1.pem /home/ubuntu/trojan/fullchain.pem
 sudo cp /etc/letsencrypt/archive/t.yanjie.me/privkey1.pem /home/ubuntu/trojan/privkey.pem
 sudo snap install docker
+sleep 5
 FILE=/home/ubuntu/trojan/config.json
 if [ ! -f "$FILE" ]; then
 touch trojan/config.json
