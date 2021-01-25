@@ -1,0 +1,1 @@
+du -h --max-depth=1 your_dest_dir
