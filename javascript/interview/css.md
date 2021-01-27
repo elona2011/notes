@@ -13,7 +13,7 @@ content-box/border-box
 
 * BFC
 
-Block Formatting Context
+Block Formatting Context/块级格式化上下文
 
 触发条件:：position/float/overflow/display
 
