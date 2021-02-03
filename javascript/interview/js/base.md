@@ -6,6 +6,8 @@
 * new过程
 * 继承
 * 类型转换判断
+* CJS/AMD/UMD/ESM
+* 动态加载方案
 
 ---
 
@@ -76,3 +78,16 @@ boolean: 0/1
 null:0
 
 Object.prototype.toString.call(x)
+
+* CJS/AMD/UMD/ESM
+
+CJS: CommonJS/同步/拷贝引用
+AMD: 异步/define/require.js
+UMD: 通过全局变量匹配，识别使用当前的模块方案
+ESM: 静态分析/单例
+
+* 动态加载方案
+
+Webpack import/浏览器import/AMD
+
+https://juejin.cn/post/6924829595006926856?utm_source=gold_browser_extension
