@@ -3,6 +3,7 @@
 * diff算法
 * Proxy vs Object.defineProperty
 * vue vs react
+* vue原理
 
 ---
 
@@ -53,3 +54,11 @@ Proxy：对对象的支持。可以监听对象新增删除属性/只在get时�
 数据流的不同/HoC 和 mixins/模板渲染方式
 
 https://juejin.cn/post/6844903668446134286
+
+* vue原理
+
+new Vue()->_init->$mount->compile(parse,optimize,generate)->render function->getter(setter)->watcher->patch
+
+_init:初始化生命周期、事件、props、methods、data(响应式)、computed、watch等
+
+https://juejin.cn/book/6844733705089449991/section/6844733705211084808
