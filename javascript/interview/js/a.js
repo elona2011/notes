@@ -1,21 +1,18 @@
+function cal(D, S) {
+    debugger
+    let map = {}, maxLen = 0
+    for (let w of D) {
+        map[w] = 1
+        maxLen = Math.max(maxLen, w.length)
+    }
+    let p = 0
+    while(p<S.length){
+        for(let i=1;i<=maxLen;i++){
+            let w = S.slice(p,p+i)
+            if(map[w]){
+                
+            }
+        }
+    }
 
-async function async1() {
-    console.log('async1 start')
-    await async2()
-    console.log('async1 end')
 }
-async function async2() {
-    console.log('async2')
-}
-console.log('script start')
-setTimeout(function () {
-    console.log('setTimeOut')
-}, 0)
-async1()
-new Promise(function (resolve) {
-    console.log('promise1')
-    resolve()
-}).then(function () {
-    console.log('promise2')
-})
-console.log('script end')
