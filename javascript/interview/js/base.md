@@ -2,10 +2,10 @@
 * 块级作用域
 * 执行上下文
 * 闭包
+* 内存泄漏
 * 类型转换判断
 * CJS/AMD/UMD/ESM
 * 动态加载方案
-* 内存泄漏
 
 ---
 
@@ -38,6 +38,10 @@ Symbol.for("bar") === Symbol.for("bar") //true 在symbol注册表中存取
 
 多个子函数都指向父级，是完全共享的。当父级的作用域被修改，会影响到所有的子函数
 
+* 内存泄漏
+
+引用计数/chrome memory/process.memoryUsage/WeakMap
+
 * 类型转换判断
 
 对象转数字：valueOf->toString->[object Object]
@@ -59,7 +63,3 @@ ESM: 静态分析/单例
 Webpack import/浏览器import/AMD
 
 https://juejin.cn/post/6924829595006926856?utm_source=gold_browser_extension
-
-* 内存泄漏
-
-引用计数/chrome memory/process.memoryUsage/WeakMap
