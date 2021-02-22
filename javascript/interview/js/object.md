@@ -3,6 +3,7 @@
 * new过程
 * 继承
 * 手写instanceof
+* bind
 
 ---
 
@@ -74,3 +75,7 @@ function instance_of(obj,func){
     return false
 }
 ```
+
+* bind
+
+https://www.cnblogs.com/echolun/p/12178655.html

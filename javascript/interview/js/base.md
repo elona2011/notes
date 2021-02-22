@@ -5,6 +5,7 @@
 * 类型转换判断
 * CJS/AMD/UMD/ESM
 * 动态加载方案
+* 内存泄漏
 
 ---
 
@@ -58,3 +59,7 @@ ESM: 静态分析/单例
 Webpack import/浏览器import/AMD
 
 https://juejin.cn/post/6924829595006926856?utm_source=gold_browser_extension
+
+* 内存泄漏
+
+引用计数/chrome memory/process.memoryUsage/WeakMap
