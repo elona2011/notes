@@ -6,6 +6,7 @@
 * 类型转换判断
 * CJS/AMD/UMD/ESM
 * 动态加载方案
+* 前端趋势
 
 ---
 
@@ -63,3 +64,7 @@ ESM: 静态分析/单例
 Webpack import/浏览器import/AMD
 
 https://juejin.cn/post/6924829595006926856?utm_source=gold_browser_extension
+
+* 前端趋势
+
+esm import(vite)/low code/wasm/在线文档
