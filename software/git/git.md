@@ -1,3 +1,9 @@
+
+```
+git config user.name "Your Name Here"
+git config user.email your@email.com
+```
+
 # new branch
 
 ```
