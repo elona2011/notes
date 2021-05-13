@@ -2,6 +2,7 @@
 ```
 git config user.name "Your Name Here"
 git config user.email your@email.com
+git config http.proxy socks5h://localhost:39999
 ```
 
 # new branch
