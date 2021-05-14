@@ -1,3 +1,6 @@
+# mint位置
+
+/lib/systemd/system/foo.service
 
 ```
 systemctl enable nodeserver.service
