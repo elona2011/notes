@@ -1,3 +1,12 @@
+- yarn config set registry 'https://registry.npm.taobao.org'
+- yarn config set sass_binary_site "https://npm.taobao.org/mirrors/node-sass/"
+- yarn config set phantomjs_cdnurl "http://cnpmjs.org/downloads"
+- yarn config set electron_mirror "https://npm.taobao.org/mirrors/electron/"
+- yarn config set sqlite3_binary_host_mirror "https://foxgis.oss-cn-shanghai.aliyuncs.com/"
+- yarn config set profiler_binary_host_mirror "https://npm.taobao.org/mirrors/node-inspector/"
+- yarn config set chromedriver_cdnurl "https://cdn.npm.taobao.org/dist/chromedriver"
+- yarn config set cache-folder $(pwd)/.yarn-cache
+
 # 环境变量
 
 window:
@@ -66,51 +75,3 @@ npm ls --depth=0
 
 https://docs.npmjs.com/how-npm-works/npm3
 
-# server
-
-启动node server
-```
-npm install http-server --save-dev
-npm start
-```
-
-package.json如下：
-```
-"devDependencies": {
-   "http-server": "^0.9.0",
-},
-"scripts": {
-   "start": "http-server -a localhost -p 8000 .",
-},
-```
-
-# debug
-
-```
-npm install -g node-inspector
-node-debug app.js
-```
-
-# Install NVM
-
-nvm用于切换node的各种版本
-
-https://github.com/creationix/nvm
-
-```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
-```
-
-安装完可能需要重启bash
-
-# Install node
-
-```
-# nvm install 4.5.0
-# nvm ls //查看所有版本
-# nvm use 4.5.0 //使用该版本
-```
-
-*二进制安装*
-
-http://www.cnblogs.com/dubaokun/p/3558848.html
