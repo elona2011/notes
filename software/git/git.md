@@ -1,22 +1,12 @@
-
 ```
 git config user.name "Your Name Here"
 git config user.email your@email.com
 git config http.proxy socks5h://localhost:39999
 ```
 
-# new branch
+# git命令行使用socks5代理
 
-```
-git branch <branch name>
-git checkout -b <branch name>
-```
-
-# del branch
-
-```
-git branch -d branch1
-```
+git -c http.proxy=socks5h://localhost:39999 clone https://github.com/xxx/xx.git
 
 # cache password
 
@@ -50,14 +40,6 @@ git commit -m "fixed untracked files"
 ```
 
 https://stackoverflow.com/questions/11451535/gitignore-is-not-working
-
-# 远程库克隆
-
-```
-git clone <SSH clone URL>
-```
-
-<SSH clone URL> 在github相应仓库首页右侧点击SSH clone URL的复制按钮
 
 ## git stage
 
@@ -153,11 +135,3 @@ Host ssh.github.com
 ``http://127.0.0.1:9699``替换成代理地址和商品
 
 ``C:\\Users\\username\\\.ssh\\id_rsa``替换成ssh key的实际路径
-
-# SVN
-
-TortoiseSVN命令行使用
-
-http://my.oschina.net/donhui/blog/385452
-
-ssa
