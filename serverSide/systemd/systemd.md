@@ -14,6 +14,7 @@ http://expressjs.com/en/advanced/pm.html
 ```
 ls /etc/systemd/system/
 journalctl -e -u nodeserver.service
+journalctl -f -u nodeserver.service
 ```
 
 python3不打印日志

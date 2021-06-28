@@ -1,3 +1,0 @@
-```bash
-sudo dscacheutil -flushcache
-```
