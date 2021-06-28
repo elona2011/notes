@@ -1,0 +1,17 @@
+[Unit]
+Description=trojan
+Documentation=https://trojan-gfw.github.io/trojan/config https://trojan-gfw.github.io/trojan/
+After=network.target network-online.target nss-lookup.target mysql.service mariadb.service mysqld.service
+
+[Service]
+Type=simple
+User=proxy
+PermissionsStartOnly=true
+StandardError=journal
+ExecStartPre=/path/to/iptables_install.sh <user> <port>
+ExecStart="/usr/local/bin/trojan" "/usr/local/etc/trojan/config.json"
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStopPost=/path/to/iptables_uninstall.sh
+
+[Install]
+WantedBy=multi-user.target
