@@ -11,5 +11,7 @@ https://github.com/trojan-gfw/trojan/issues/135
 
 dnsmasq
 
+https://dns.google/query?name=www.google.com
 https://computingforgeeks.com/install-and-configure-dnsmasq-on-ubuntu/
 https://athrunsun.github.io/2016/10/05/2016-10/dns_tunneling_by_ssh_with_socat/
+https://www.cnblogs.com/develon/p/11830726.html#dns
