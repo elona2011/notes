@@ -1,4 +1,5 @@
 #!/bin/sh
+sudo apt install snapd
 sudo snap install core
 sudo snap refresh core
 sudo snap install --classic certbot
