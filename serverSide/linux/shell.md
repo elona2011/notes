@@ -1,7 +1,3 @@
-```
-$ scp -r * remoteuser@remoteserver:/remote/folder/
-```
-
 # bg
 
 ```

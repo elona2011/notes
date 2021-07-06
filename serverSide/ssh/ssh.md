@@ -20,12 +20,6 @@
 ssh -p [port] [ip]
 ```
 
-拷贝远程文件夹
-
-```
-scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
-```
-
 # 使用shh免密登陆vps
 
 ```
