@@ -1,3 +1,7 @@
+# socks5
+
+ssh -o ProxyCommand='nc -x 127.0.0.1:39582 %h %p' YourName@YourIp -p 1022
+
 # Intro
 
 1.生成session密钥
