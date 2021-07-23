@@ -1,6 +1,6 @@
 # socks5
 
-ssh -o ProxyCommand='nc -x 127.0.0.1:39582 %h %p' YourName@YourIp -p 1022
+ssh -o ProxyCommand='nc -x 127.0.0.1:39582 %h %p' ubuntu@101.32.248.62 -p 30222
 
 # Intro
 
