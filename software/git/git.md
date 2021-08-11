@@ -6,7 +6,7 @@ git config http.proxy socks5h://localhost:39999
 
 # git命令行使用socks5代理
 
-git -c http.proxy=socks5h://localhost:39999 clone https://github.com/xxx/xx.git
+git -c http.proxy=socks5h://localhost:39582 clone https://github.com/xxx/xx.git
 
 # cache password
 
