@@ -1,8 +1,6 @@
 # command line
 
-```bash
-$ mysql -u root -h localhost -p
-```
+mysql -h hostname -P 3306 -u username -ppassword dbname
 
 ```sql
 show databases;

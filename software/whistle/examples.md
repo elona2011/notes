@@ -6,14 +6,13 @@ www.luisaviaroma.cn/static/b46df8183e8ti241d8d031852be488032 file://</Users/yanj
 # replace
 
 rules:
-
-```
 mp.weixin.qq.com/mp/newappmsgvote resReplace:///Users/yanjie/git/reverse/akamai/resReplace.json
-```
 
-resReplace.json:
-
-```
+```resReplace.json
 aaa: bbb
 {"\"selected\":true": "\"selected\":false"}
 ```
+
+# 替换cookie
+Rules:
+test-dp.zking.com/sso/ssoReturn headerReplace://res.set-cookie:/Path/=domain%3Dtest-dp.zking.com;Path
