@@ -4,10 +4,10 @@ sudo snap install core
 sudo snap refresh core
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo certbot certonly --standalone -m arthuxx@gmail.com --agree-tos -n -d t..me
+sudo certbot certonly --standalone -m arthuxx@gmail.com --agree-tos -n -d t.xxx.xx
 mkdir trojan
-sudo cp /etc/letsencrypt/archive/t.yanjie.me/fullchain1.pem /home/ubuntu/trojan/fullchain.pem
-sudo cp /etc/letsencrypt/archive/t.yanjie.me/privkey1.pem /home/ubuntu/trojan/privkey.pem
+sudo cp /etc/letsencrypt/archive/t.xxx.xx/fullchain1.pem /home/ubuntu/trojan/fullchain.pem
+sudo cp /etc/letsencrypt/archive/t.xxx.xx/privkey1.pem /home/ubuntu/trojan/privkey.pem
 sudo snap install docker
 sleep 5
 FILE=/home/ubuntu/trojan/config.json
