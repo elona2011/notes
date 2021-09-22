@@ -1,8 +1,0 @@
-thinkjs官方推荐的生产环境部署方案为nginx+pm2的方式：nginx部署静态资源，并反向代理动态请求至nodejs服务器端。nodejs端使用pm2作为容器进行管理。
-
-# pm2
-
-启动pm2
-thinkjs在项目内已经提供了nginx和pm2的配置文件。其中pm2的配置文件默认打开cluster(集群)功能。按照thinkjs文档的说明，修改一下配置文件的cwd为线上真实的项目路径，就可以在项目目录下通过pm2 startOrReload pm2.json启动项目了。
-
-如果没有配置nginx服务器，需要在config/env/production.js中配置resource_on: true，开启静态资源处理。否则访问静态资源的路径会报错
