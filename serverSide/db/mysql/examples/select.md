@@ -1,0 +1,1 @@
+select * from infocountbyday where uploadType like 'l%13';
