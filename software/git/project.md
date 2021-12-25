@@ -9,5 +9,6 @@ git checkout -b xxx
 开发自测完成后，发布到测试环境
 
 ```
-git 
+git merge test
+
 ```
