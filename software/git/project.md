@@ -1,27 +1,24 @@
 # 分支定义
 
+name-xxx需求分支，每个开发人员用姓名缩写+需求编号创建分支名，一个需求建一个分支，可发测试环境自测，不可提测
+release-date分支，从master上checkout，用于提测，并且后续合并到master发生产
 master分支，与生产一致，严格控制权限
-release分支，用于发布到测试环境，并且后续合并到master
-每个开发人员建个人分支用于日常开发。
 
 # 流程
 
-建立个人分支或根据需求单独建分支
+1 根据需求建name-xxx分支。此分支可发布到测试环境自测，但不可提测。
 
 ```
-git checkout -b your-name-branch
+git checkout -b name-xxx
 ```
 
-开发自测完成后，从master分支上checkout出release分支，将你的分支合并到release分支，并发布到测试环境。
+2 开发自测完成后，提交合并请求到release-date分支，项目经理审核后，合并到release分支。提测。
 
-```bash
-git branch -D release # 删除本地release分支
-git push origin :release # 删除远程release分支
-git checkout release # 从master分支上checkout出release分支
-git merge your-name-branch
-```
+3 测试通过后，从release分支提交合并请求到master分支，项目经理审核后，由运维人员打tag并发布到生产。
 
-测试通过后，从release分支提交合并请求到master分支，项目经理审核后，由运维人员打tag并发布到生产。
+4 重置release分支
+
+git reset --hard master
 
 # 生产回退
 
