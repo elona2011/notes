@@ -8,3 +8,19 @@
 # 多个元素名
 (//span|//div)[contains(., '车架号')]
 //*[self::span|self::div][contains(., '车架号')]
+
+# 根据子元素选择父元素
+
+//div[contains(@class,'van-popup') and .//span[contains(.,'优享保障')]]
+首先找到class为van-popup的div，并且它的子元素中要有一个span，且这个span内有文字'优享保障'
+
+# 根据兄弟元素查找
+
+//div[contains(@class, 'button') and contains(.,'确定') and preceding-sibling::ul[contains(.,'基础保障')]]
+找到div的class为button，且包括'确定'，且它的上一个兄弟元素为ul并包含文字'基础保障'
+
+# 
+
+ancestor::
+preceding-sibling::
+following-sibling::
