@@ -26,3 +26,6 @@ ctrl+a 点scale
 tab ObjectMode <-> EditMode
 alt+z 透视模式
 alt+s 垂直移动
+
+shift+d 复制
+alt+left-click loop select
