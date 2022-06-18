@@ -19,8 +19,14 @@
 //div[contains(@class, 'button') and contains(.,'确定') and preceding-sibling::ul[contains(.,'基础保障')]]
 找到div的class为button，且包括'确定'，且它的上一个兄弟元素为ul并包含文字'基础保障'
 
+# 匹配第1个
+
+(//button[contains(.,'注销')])[1]
+匹配第1个
+
 # 
 
 ancestor::
+descendant::
 preceding-sibling::
 following-sibling::
