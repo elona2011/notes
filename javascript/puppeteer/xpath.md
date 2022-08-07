@@ -24,6 +24,11 @@
 (//button[contains(.,'注销')])[1]
 匹配第1个
 
+# 精确匹配
+
+//table/tbody/tr/td[@class='available']/div/span[normalize-space(text())='1']
+通过normalize-space(text())
+
 # 
 
 ancestor::
