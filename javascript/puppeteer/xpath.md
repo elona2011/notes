@@ -27,10 +27,12 @@
 # 精确匹配
 
 //table/tbody/tr/td[@class='available']/div/span[normalize-space(text())='1']
+//input[normalize-space(@placeholder)='请选择性别']
 通过normalize-space(text())
 
-# 
+# Axes
 
+parent::
 ancestor::
 descendant::
 preceding-sibling::
