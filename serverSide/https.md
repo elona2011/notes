@@ -10,4 +10,4 @@ sudo certbot certonly  -d "*.xxx.com" --manual --preferred-challenges dns
 
 测试域名解析win10
 
-nsloopup app.xxx.com
+nslookup app.xxx.com

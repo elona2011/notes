@@ -11,5 +11,5 @@ cp /etc/letsencrypt/archive/xlcmll.top/privkey1.pem /root/trojan/privkey.pem
 
 4 docker run
 
-docker run -dt --name trojan -v /root/trojan:/config -p 443:443 trojangfw/trojan
+docker run -dt --name trojan2023 --restart always -v /home/ubuntu/trojan:/config -p 443:443 trojangfw/trojan
 
