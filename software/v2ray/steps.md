@@ -16,14 +16,47 @@
     ],
     "outbounds": [
         {
-            "protocol": "freedom"
+            "protocol": "freedom",
+            "tag": "freedom"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "blackhole"
         }
-    ]
+    ],
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "network": "udp,tcp",
+                "outboundTag": "freedom"
+            },
+            {
+                "type": "field",
+                "network": "udp,tcp",
+                "outboundTag": "blackhole"
+            }
+        ]
+    }
 }
 ```
 
 2启动docker
-docker run -d --name v2ray -v /path/to/config.json:/etc/v2fly/config.json -p 10086:10086 v2fly/v2fly-core run -c /etc/v2fly/config.json 
+sudo docker run --restart always -it -d \
+    --name wgcf \
+    -p 80:10086 \
+    --sysctl net.ipv6.conf.all.disable_ipv6=0 \
+    --privileged --cap-add net_admin \
+    -v /lib/modules:/lib/modules \
+    -v $(pwd)/wgcf:/wgcf \
+    neilpang/wgcf-docker -4 
+
+sudo docker run -d -it --restart always \
+    --name v2ray \
+    --network container:wgcf \
+    -v /home/lighthouse/config.json:/etc/v2fly/config.json \
+    v2fly/v2fly-core run -c /etc/v2fly/config.json 
 
 3下载客户端软件，并修改客户端json
 ```json
