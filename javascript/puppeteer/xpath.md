@@ -30,6 +30,9 @@
 //input[normalize-space(@placeholder)='请选择性别']
 通过normalize-space(text())
 
+# 精确包含
+//span[text()[contains(.,'xxx@email.com')]]
+
 # Axes
 
 parent::
