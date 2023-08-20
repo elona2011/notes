@@ -16,4 +16,4 @@ docker-compose run web pip install -r requirements.txt -i https://pypi.tuna.tsin
 docker run -it --rm -d -p 8080:80 --name web nginx
 
 docker run -it --rm -p 8080:8080 -v D:\git\b2c-mobile:/code -w="/code" node:14 bash
-docker run -it --rm -p 8080:8080 -v D:\git\mobile-web:/code -w="/code" node:14 bash
+docker run -it --rm -p 8088:8088 -v D:\git\mobile-web:/code -w="/code" node:14 bash
