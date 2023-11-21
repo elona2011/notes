@@ -13,10 +13,8 @@ git -c http.proxy=socks5h://localhost:39582 clone https://github.com/xxx/xx.git
 1 缓存本地
 
 ```
-git config --global credential.helper 'cache --timeout=3600'
+git config --global credential.helper store
 ```
-
-https://help.github.com/articles/caching-your-github-password-in-git/
 
 2 添加SSH key
 

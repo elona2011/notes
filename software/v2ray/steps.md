@@ -58,6 +58,13 @@ sudo docker run -d -it --restart always \
     -v /home/lighthouse/config.json:/etc/v2fly/config.json \
     v2fly/v2fly-core run -c /etc/v2fly/config.json 
 
+单独启动：
+sudo docker run -d -it --restart always \
+    --name v2ray \
+    -p 80:10086 \
+    -v /home/lighthouse/config.json:/etc/v2fly/config.json \
+    v2fly/v2fly-core run -c /etc/v2fly/config.json 
+
 3下载客户端软件，并修改客户端json
 ```json
 {
